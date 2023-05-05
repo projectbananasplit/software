@@ -1,5 +1,5 @@
 @echo off
 
-.\user_clean.bat
-.\user_install.bat
+call "user_clean.bat"
+call "user_install.bat"
 
