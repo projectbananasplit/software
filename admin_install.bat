@@ -6,6 +6,8 @@ set param=--accept-source-agreements --accept-package-agreements --silent
 : winget install %param% --id "XPDM1ZW6815MQM"
 
 : winget ========================
+: Git
+winget install %param% --id "Git.Git"
 : VLC
 winget install %param% --id "VideoLAN.VLC"
 : PrusaSlicer
@@ -20,5 +22,6 @@ winget install %param% --id "TheDocumentFoundation.LibreOffice"
 winget install %param% --id "Ultimaker.Cura"
 : KiCad
 winget install %param% --id "KiCad.KiCad"
-: Git
-winget install %param% --id "Git.Git"
+: Notepad++
+winget install %param% --id "Notepad++.Notepad++"
+
