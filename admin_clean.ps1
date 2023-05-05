@@ -21,6 +21,7 @@ $Bloatware = @(
     "Microsoft.SkypeApp"
     #"Microsoft.StorePurchaseApp"
     "Microsoft.Office.Todo.List"
+    "Microsoft.Wallet"
     "Microsoft.Whiteboard"
     "Microsoft.WindowsAlarms"
     "Microsoft.WindowsCamera"
@@ -40,7 +41,7 @@ $Bloatware = @(
     "Microsoft.XboxGamingOverlay_5.721.10202.0_neutral_~_8wekyb3d8bbwe"
     "Microsoft.GamingApp"
     #Cortana
-    "Microsoft.549981C3F5F10*"
+    "Microsoft.549981C3F5F10"
     #Windows11
     "*getstarted*"
     "Microsoft.Windows.ParentalControls"
