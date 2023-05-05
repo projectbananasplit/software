@@ -2,6 +2,17 @@
 set param=--accept-source-agreements --accept-package-agreements --silent
 
 : MSSTORE =======================
+: Webp-Bilderweiterungen
+winget install %param% --id "9PG2DK419DRG"
+: Raw-Bilderweiterung
+winget install %param% --id "9NCTDW2W1BH8"
+:HEIF-Bilderweiterungen
+winget install %param% --id "9PMMSR1CGPWG"
+: AV1 Video Extension
+winget install %param% --id "9MVZQVXJBQ9V"
+: VP9 Video Erweiterung
+winget install %param% --id "9N4D0MSMP0PT"
+: =============
 : Blender
 winget install %param% --id "9PP3C07GTVRH"
 : Gimp
