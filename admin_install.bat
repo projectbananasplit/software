@@ -24,4 +24,5 @@ winget install %param% --id "Ultimaker.Cura"
 winget install %param% --id "KiCad.KiCad"
 : Notepad++
 winget install %param% --id "Notepad++.Notepad++"
-
+: Python.Python.3.10
+winget install %param% --id "Python.Python.3.10"
