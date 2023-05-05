@@ -27,8 +27,6 @@ winget install %param% --id "9NW33J738BL0"
 winget install %param% --id "9N8G7TSCL18R"
 : Cinebench
 winget install %param% --id "9PGZKJC81Q7J"
-: FreeCAD
-winget install %param% --id "FreeCAD.FreeCAD"
 
 
 : winget ========================

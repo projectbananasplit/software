@@ -24,5 +24,12 @@ winget install %param% --id "Ultimaker.Cura"
 winget install %param% --id "KiCad.KiCad"
 : Notepad++
 winget install %param% --id "Notepad++.Notepad++"
+: FreeCAD
+winget install %param% --id "FreeCAD.FreeCAD"
+
 : Python.Python.3.10
 winget install %param% --id "Python.Python.3.10"
+
+: Microsoft Visual C++ 2015-20XX Redistributable
+winget install %param% --id "Microsoft.VCRedist.2015+.x64"
+winget install %param% --id "Microsoft.VCRedist.2015+.x86"
