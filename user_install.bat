@@ -30,5 +30,5 @@ winget install %param% --id "9PGZKJC81Q7J"
 
 
 : winget ========================
-winget install %param% --id "Figma.Figma"
+:winget install %param% --id "Figma.Figma"
 
