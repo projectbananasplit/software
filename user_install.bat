@@ -1,6 +1,7 @@
 @echo off
 set param=--accept-source-agreements --accept-package-agreements --silent
 
+: MSSTORE =======================
 : Blender
 winget install %param% --id "9PP3C07GTVRH"
 : Gimp
@@ -13,3 +14,9 @@ winget install %param% --id "XP9KHM4BK9FZ7Q"
 winget install %param% --id "9NW33J738BL0"
 : NanaZip
 winget install %param% --id "9N8G7TSCL18R"
+: Cinebench
+winget install %param% --id "9PGZKJC81Q7J"
+
+: winget ========================
+winget install %param% --id "Figma.Figma"
+
