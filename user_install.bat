@@ -11,3 +11,5 @@ winget install %param% --id "9PD9BHGLFC7H"
 winget install %param% --id "XP9KHM4BK9FZ7Q"
 : Monitorian
 winget install %param% --id "9NW33J738BL0"
+: NanaZip
+winget install %param% --id "9N8G7TSCL18R"
