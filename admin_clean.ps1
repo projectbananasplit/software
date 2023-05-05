@@ -39,6 +39,12 @@ $Bloatware = @(
     "Microsoft.YourPhone"
     "Microsoft.XboxGamingOverlay_5.721.10202.0_neutral_~_8wekyb3d8bbwe"
     "Microsoft.GamingApp"
+    #Cortana
+    "Microsoft.549981C3F5F10*"
+    #Windows11
+    "*getstarted*"
+    "Microsoft.Windows.ParentalControls"
+    #Others
     "SpotifyAB.SpotifyMusic"
     "Disney.37853FC22B2CE"
     "*EclipseManager*"
