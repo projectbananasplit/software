@@ -36,6 +36,10 @@ winget uninstall %param% --name "Magic Bullet Suite"
 echo %green%Ultimaker Cura
 winget uninstall %param% --name "Ultimaker Cura 4.13.0"
 
+echo %green%Arduino
+winget uninstall %param% -e --id "Arduino"
+
+
 echo %green%Python.Python.3.6
 winget  uninstall %param% -e --id "Python.Python.3.6"
 echo %green%Python.Python.3.7
