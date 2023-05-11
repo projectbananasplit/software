@@ -27,38 +27,38 @@ echo %blue%##############################
 echo %blue%MSSTORE
 echo %blue%##############################
 : VLC nicht up to date
-: winget install %param% --id "XPDM1ZW6815MQM"
+: winget install %param% -e --id "XPDM1ZW6815MQM"
 
 echo %blue%##############################
 echo %blue%winget
 echo %blue%##############################
 echo %green%Git
-winget install %param% --id "Git.Git"
+winget install %param% -e --id "Git.Git"
 echo %green%Python.Python.3.10
-winget install %param% --id "Python.Python.3.10"
+winget install %param% -e --id "Python.Python.3.10"
 echo %green%VLC
-winget install %param% --id "VideoLAN.VLC"
+winget install %param% -e --id "VideoLAN.VLC"
 echo %green%PrusaSlicer
-winget install %param% --id "Prusa3D.PrusaSlicer"
+winget install %param% -e --id "Prusa3D.PrusaSlicer"
 echo %green%Meshlab
-winget install %param% --id "CNRISTI.MeshLab"
+winget install %param% -e --id "CNRISTI.MeshLab"
 echo %green%OpenSCAD
-winget install %param% --id "OpenSCAD.OpenSCAD"
+winget install %param% -e --id "OpenSCAD.OpenSCAD"
 echo %green%LibreOffice
-winget install %param% --id "TheDocumentFoundation.LibreOffice"
+winget install %param% -e --id "TheDocumentFoundation.LibreOffice"
 echo %green%Cura
-winget install %param% --id "Ultimaker.Cura"
+winget install %param% -e --id "Ultimaker.Cura"
 echo %green%KiCad
-winget install %param% --id "KiCad.KiCad"
+winget install %param% -e --id "KiCad.KiCad"
 echo %green%Notepad++
-winget install %param% --id "Notepad++.Notepad++"
+winget install %param% -e --id "Notepad++.Notepad++"
 echo %green%FreeCAD
-winget install %param% --id "FreeCAD.FreeCAD"
+winget install %param% -e --id "FreeCAD.FreeCAD"
 
 
 echo %purp%==============================
 echo %purp%Windows Erweiterungen
 echo %purp%==============================
 echo %green%Microsoft Visual C++ 2015-20XX Redistributable 32/64bit
-winget install %param% --id "Microsoft.VCRedist.2015+.x64"
-winget install %param% --id "Microsoft.VCRedist.2015+.x86"
+winget install %param% -e --id "Microsoft.VCRedist.2015+.x64"
+winget install %param% -e --id "Microsoft.VCRedist.2015+.x86"
