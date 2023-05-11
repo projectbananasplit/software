@@ -33,6 +33,9 @@ winget uninstall %param% -e --id "Maxon Cinema 4D R25"
 echo %green%Magic Bullet Suite
 winget uninstall %param% --name "Magic Bullet Suite"
 
+echo %green%Ultimaker Cura
+winget uninstall %param% --name "Ultimaker Cura 4.13.0"
+
 echo %green%Python.Python.3.6
 winget install %param% -e --id "Python.Python.3.6"
 echo %green%Python.Python.3.7
