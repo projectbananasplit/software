@@ -9,6 +9,12 @@ set blue=%esc%[38;5;12m
 set purp=%esc%[38;5;13m
 set white=%esc%[38;5;15m
 
+echo %yellow%
+echo %yellow%Senfinator 200g
+echo %yellow%
+echo %yellow%Installiert oder updatet die auf Nutzerebene laufenden Programme.
+echo %yellow%Installs or updates the programs running at the user level.
+echo %yellow%
 echo %yellow%Senf this PC.
 echo %yellow%
 echo %yellow%"    ___________
