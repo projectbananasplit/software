@@ -45,7 +45,7 @@ echo %purp%Anwendungen
 echo %purp%==============================
 echo %green%Blender
 winget install %param% --id "9PP3C07GTVRH"
-echo %green%Gimp"
+echo %green%Gimp
 winget install %param% --id "XPDM27W10192Q0"
 echo %green%InkScape
 winget install %param% --id "9PD9BHGLFC7H"
