@@ -44,3 +44,5 @@ echo %green%Python.Python.3.8
 winget unintstall %param% -e --id "Python.Python.3.8"
 echo %green%Python.Python.3.9
 winget unintstall %param% -e --id "Python.Python.3.9"
+echo %green%Python.Python.3.10
+winget unintstall %param% -e --id "Python.Python.3.10"
