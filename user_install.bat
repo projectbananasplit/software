@@ -68,9 +68,12 @@ winget install %param% -e --id "9PGZKJC81Q7J"
 
 
 : winget ========================
-: echo %blue%##############################
-: echo %blue%winget
-: echo %blue%##############################
+echo %blue%##############################
+echo %blue%winget
+echo %blue%##############################
 : echo %green%Figma
 :winget install %param% -e --id "Figma.Figma"
+
+echo %green%Arduino
+winget install %param% --scope user -e --id "ArduinoSA.IDE.stable"
 
