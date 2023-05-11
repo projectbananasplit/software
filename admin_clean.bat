@@ -26,3 +26,7 @@ echo %green%Google Chrome
 winget uninstall %param% --id "Google.Chrome"
 echo %green%x263vfw
 winget uninstall %param% --id "x263vfw64"
+echo %green%Maxon Cinema 4D R25
+winget uninstall %param% --id "Maxon Cinema 4D R25"
+echo %green%Magic Bullet Suite
+winget uninstall %param% --name "Magic Bullet Suite"
