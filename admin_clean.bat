@@ -27,7 +27,7 @@ winget uninstall %param% -e --id "GIMP.GIMP"
 echo %green%Google Chrome
 winget uninstall %param% -e --id "Google.Chrome"
 echo %green%x263vfw
-winget uninstall %param% -e --id "x263vfw64"
+winget uninstall %param% -e --id "x264vfw64"
 echo %green%Maxon Cinema 4D R25
 winget uninstall %param% -e --id "Maxon Cinema 4D R25"
 echo %green%Magic Bullet Suite
