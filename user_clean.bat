@@ -1,5 +1,5 @@
 @echo off
-set param=" --accept-source-agreements --silent"
+set param=--accept-source-agreements --silent
 
 @for /f %%a in ('echo prompt $E^| cmd') do set "esc=%%a"
 set red=%esc%[38;5;1m
