@@ -1,34 +1,52 @@
 @echo off
 set param=--accept-source-agreements --accept-package-agreements --silent
 
+@for /f %%a in ('echo prompt $E^| cmd') do set "esc=%%a"
+set red=%esc%[38;5;1m
+set green=%esc%[38;5;2m
+set yellow=%esc%[38;5;11m
+set blue=%esc%[38;5;12m
+set purp=%esc%[38;5;13m
+set white=%esc%[38;5;15m
+
 : MSSTORE =======================
-: Webp-Bilderweiterungen
+echo %blue%<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>
+echo %blue%MSSTORE
+echo %blue%<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>
+echo %purp%==============================
+echo %purp%Windows Erweiterungen
+echo %purp%==============================
+echo %green%Webp-Bilderweiterungen
 winget install %param% --id "9PG2DK419DRG"
-: Raw-Bilderweiterung
+echo %green%Raw-Bilderweiterung
 winget install %param% --id "9NCTDW2W1BH8"
-:HEIF-Bilderweiterungen
+echo %green%HEIF-Bilderweiterungen
 winget install %param% --id "9PMMSR1CGPWG"
-: AV1 Video Extension
+echo %green%AV1 Video Extension
 winget install %param% --id "9MVZQVXJBQ9V"
-: VP9 Video Erweiterung
+echo %green%VP9 Video Erweiterung
 winget install %param% --id "9N4D0MSMP0PT"
-: =============
-: Blender
+echo %purp%==============================
+echo %purp%Anwendungen
+echo %purp%==============================
+echo %green%Blender
 winget install %param% --id "9PP3C07GTVRH"
-: Gimp
+echo %green%Gimp"
 winget install %param% --id "XPDM27W10192Q0"
-: InkScape
+echo %green%InkScape
 winget install %param% --id "9PD9BHGLFC7H"
-: Visual Studio Code
+echo %green%Visual Studio Code
 winget install %param% --id "XP9KHM4BK9FZ7Q"
-: Monitorian
+echo %green%Monitorian
 winget install %param% --id "9NW33J738BL0"
-: NanaZip
+echo %green%NanaZip
 winget install %param% --id "9N8G7TSCL18R"
-: Cinebench
+echo %green%Cinebench
 winget install %param% --id "9PGZKJC81Q7J"
 
 
 : winget ========================
+: echo %blue%winget
+: echo %green%Figma
 :winget install %param% --id "Figma.Figma"
 
