@@ -9,10 +9,22 @@ set blue=%esc%[38;5;12m
 set purp=%esc%[38;5;13m
 set white=%esc%[38;5;15m
 
+echo %yellow%    ___________    
+echo %yellow%   [___________]   
+echo %yellow%   /           \\   
+echo %yellow%  /~~^~^~^~^~^~^\\  
+echo %yellow% /===============\\ 
+echo %yellow%;  _   _       _  ;
+echo %yellow%| |_  |_ |\\ | |_  |
+echo %yellow%;  _| |_ | \\| |   ;
+echo %yellow% \\===============/ 
+echo %yellow%  \\             /  
+echo %yellow%   `"""""""""""`
+
 : MSSTORE =======================
 echo %blue%##############################
 echo %blue%MSSTORE
-echo %blue%/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+echo %blue%##############################
 echo %purp%==============================
 echo %purp%Windows Erweiterungen
 echo %purp%==============================
@@ -48,7 +60,7 @@ winget install %param% --id "9PGZKJC81Q7J"
 : winget ========================
 : echo %blue%##############################
 : echo %blue%winget
-: echo %blue%/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+: echo %blue%##############################
 : echo %green%Figma
 :winget install %param% --id "Figma.Figma"
 
