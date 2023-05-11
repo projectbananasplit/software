@@ -30,3 +30,12 @@ echo %green%Maxon Cinema 4D R25
 winget uninstall %param% --id "Maxon Cinema 4D R25"
 echo %green%Magic Bullet Suite
 winget uninstall %param% --name "Magic Bullet Suite"
+
+echo %green%Python.Python.3.6
+winget install %param% --id "Python.Python.3.6"
+echo %green%Python.Python.3.7
+winget install %param% --id "Python.Python.3.7"
+echo %green%Python.Python.3.8
+winget install %param% --id "Python.Python.3.8"
+echo %green%Python.Python.3.9
+winget install %param% --id "Python.Python.3.9"
