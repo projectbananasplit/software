@@ -67,8 +67,8 @@ echo %red%"
 :winget uninstall -e --id "Microsoft.WindowsCamera_8wekyb3d8bbwe" "%param%"
 
 echo %green%Python 3.7
-winget uninstall -e --id "9NJ46SX7X90P" "%param%"
+winget uninstall %param% -e --id "9NJ46SX7X90P"
 echo %green%Python 3.8
-winget uninstall -e --id "9MSSZTT1N39L" "%param%"
+winget uninstall %param% -e --id "9MSSZTT1N39L"
 echo %green%Python 3.9
-winget uninstall -e --id "9P7QFQMJRFP7" "%param%"
+winget uninstall %param% -e --id "9P7QFQMJRFP7"
