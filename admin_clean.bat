@@ -37,12 +37,12 @@ echo %green%Ultimaker Cura
 winget uninstall %param% --name "Ultimaker Cura 4.13.0"
 
 echo %green%Python.Python.3.6
-winget unintstall %param% -e --id "Python.Python.3.6"
+winget  uninstall %param% -e --id "Python.Python.3.6"
 echo %green%Python.Python.3.7
-winget unintstall %param% -e --id "Python.Python.3.7"
+winget  uninstall %param% -e --id "Python.Python.3.7"
 echo %green%Python.Python.3.8
-winget unintstall %param% -e --id "Python.Python.3.8"
+winget  uninstall %param% -e --id "Python.Python.3.8"
 echo %green%Python.Python.3.9
-winget unintstall %param% -e --id "Python.Python.3.9"
+winget  uninstall %param% -e --id "Python.Python.3.9"
 echo %green%Python.Python.3.10
-winget unintstall %param% -e --id "Python.Python.3.10"
+winget  uninstall %param% -e --id "Python.Python.3.10"
