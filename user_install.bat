@@ -10,7 +10,7 @@ set purp=%esc%[38;5;13m
 set white=%esc%[38;5;15m
 
 echo %yellow%Senf this PC
-echo
+echo %yellow%
 echo %yellow%"    ___________
 echo %yellow%"   [___________]
 echo %yellow%"   /           \\
