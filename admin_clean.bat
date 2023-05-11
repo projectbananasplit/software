@@ -23,7 +23,7 @@ winget uninstall %param% -e --id "Apache.OpenOffice"
 echo %green%Inkscape
 winget uninstall %param% -e --id "Inkscape.Inkscape"
 echo %green%Gimp
-winget uninstall %param% -e --id "Gimp.Gimp"
+winget uninstall %param% -e --id "GIMP.GIMP"
 echo %green%Google Chrome
 winget uninstall %param% -e --id "Google.Chrome"
 echo %green%x263vfw
