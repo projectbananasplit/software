@@ -9,17 +9,19 @@ set blue=%esc%[38;5;12m
 set purp=%esc%[38;5;13m
 set white=%esc%[38;5;15m
 
+echo %yellow%Senf this PC
+echo
 echo %yellow%"    ___________
 echo %yellow%"   [___________]
 echo %yellow%"   /           \\
 echo %yellow%"  /~~^~^~^~^~^~^\\
 echo %yellow%" /===============\\
-echo %yellow%";  _   _       _   ;
+echo %yellow%";  _   _       ___ ;
 echo %yellow%"| |_  |_ |\\ | |_  |
 echo %yellow%";  _| |_ | \\| |   ;
 echo %yellow%" \\===============/
 echo %yellow%"  \\             /
-echo %yellow%"   `"""""""""""`    
+echo %yellow%"   `"""""""""""`
 
 : MSSTORE =======================
 echo %blue%##############################
