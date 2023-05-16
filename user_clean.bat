@@ -1,5 +1,5 @@
 @echo off
-set param=--accept-source-agreements --scope user --silent
+set param=--accept-source-agreements --silent
 
 @for /f %%a in ('echo prompt $E^| cmd') do set "esc=%%a"
 set red=%esc%[38;5;1m
@@ -61,8 +61,8 @@ echo %red%"                .&@@@@@#                                  /      *@  
 echo %red%"                         (@@@@@@%               ,         #      (*&@@@,%@.
 echo %red%"                                 .%@@@@@*       &     @@&%&@@@@(      &@(
 echo %red%"                                      @&#@@@@@@@@@@@@@/
-echo %red%"
-echo %red%"
+echo %red%
+echo %red%Burn & Uninstall unwanted and outdated software. (user-level)
 
 :winget uninstall -e --id "Microsoft.WindowsCamera_8wekyb3d8bbwe" "%param%"
 
@@ -78,3 +78,5 @@ echo %green%Python 3.8
 winget uninstall %param% -e --id "9MSSZTT1N39L"
 echo %green%Python 3.9
 winget uninstall %param% -e --id "9P7QFQMJRFP7"
+echo %green%Google Chrome
+winget uninstall %param% --scope user -e --id "Google.Chrome"
