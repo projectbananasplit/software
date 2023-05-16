@@ -55,8 +55,6 @@ echo %green%Gimp
 winget install %param% -e --id "XPDM27W10192Q0"
 echo %green%InkScape
 winget install %param% -e --id "9PD9BHGLFC7H"
-echo %green%Visual Studio Code
-winget install %param% -e --id "XP9KHM4BK9FZ7Q"
 echo %green%Python 3.10
 winget install %param% -e --id "9PJPW5LDXLZ5"
 echo %green%Monitorian
@@ -65,7 +63,9 @@ echo %green%NanaZip
 winget install %param% -e --id "9N8G7TSCL18R"
 echo %green%Cinebench
 winget install %param% -e --id "9PGZKJC81Q7J"
-
+:echo %green%Visual Studio Code
+: "scope user" installer not found
+:winget install %param% -e --id "XP9KHM4BK9FZ7Q"
 
 : winget ========================
 echo %blue%##############################
@@ -74,6 +74,8 @@ echo %blue%##############################
 : echo %green%Figma
 :winget install %param% -e --id "Figma.Figma"
 
+echo %green%Visual Studio Code
+winget install %param% -e --id "Microsoft.VisualStudioCode"
 echo %green%Arduino
 winget install %param% -e --id "ArduinoSA.IDE.stable"
 
