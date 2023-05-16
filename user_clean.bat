@@ -81,6 +81,9 @@ winget uninstall %param% -e --id "9P7QFQMJRFP7"
 echo %green%Google Chrome
 winget uninstall %param% --scope user -e --id "Google.Chrome"
 
+echo %green%inkstitch
+winget uninstall %param% -e --id org.inkstitch.app_is1
+
 echo %purp%==============================
 echo %purp%Hersteller
 echo %purp%==============================

@@ -16,6 +16,7 @@ echo %blue%winget
 echo %blue%##############################
 echo %green%7zip
 winget uninstall %param% -e --id "7zip.7zip"
+winget uninstall %param% -e --id "HaukeGtze.7-ZipFileManagerUnofficial_6bk20wvc8rfx2"
 echo %green%paint.net
 winget uninstall %param% -e --id "dotPDNLLC.paintdotnet"
 echo %green%OpenOffice
@@ -50,6 +51,15 @@ echo %green%Python.Python.3.9
 winget  uninstall %param% -e --id "Python.Python.3.9"
 echo %green%Python.Python.3.10
 winget  uninstall %param% -e --id "Python.Python.3.10"
+
+
+
+echo %purp%==============================
+echo %purp%Microsoft
+echo %purp%==============================
+echo %green%Office 365
+asset\office365setup.exe /configure asset\office365remove.xml
+
 
 echo %purp%==============================
 echo %purp%Hersteller
