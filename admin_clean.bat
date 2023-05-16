@@ -21,9 +21,9 @@ winget uninstall %param% -e --id "dotPDNLLC.paintdotnet"
 echo %green%OpenOffice
 winget uninstall %param% -e --id "Apache.OpenOffice"
 echo %green%Inkscape
-winget uninstall %param% -e --id "Inkscape.Inkscape"
+winget uninstall %param% --scope machine -e --id "Inkscape.Inkscape"
 echo %green%Gimp
-winget uninstall %param% -e --id "GIMP.GIMP"
+winget uninstall %param% --scope machine -e --id "GIMP.GIMP"
 echo %green%Google Chrome
 winget uninstall %param% -e --id "Google.Chrome"
 echo %green%x264vfw
@@ -50,3 +50,9 @@ echo %green%Python.Python.3.9
 winget  uninstall %param% -e --id "Python.Python.3.9"
 echo %green%Python.Python.3.10
 winget  uninstall %param% -e --id "Python.Python.3.10"
+
+echo %purp%==============================
+echo %purp%Hersteller
+echo %purp%==============================
+echo %green%HP Display Center
+winget uninstall %param% -e --name "HP Display Center"
