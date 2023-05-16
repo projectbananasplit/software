@@ -1,5 +1,5 @@
 @echo off
-set param=--accept-source-agreements --silent
+set param=--accept-source-agreements --scope user --silent
 
 @for /f %%a in ('echo prompt $E^| cmd') do set "esc=%%a"
 set red=%esc%[38;5;1m
@@ -66,6 +66,12 @@ echo %red%"
 
 :winget uninstall -e --id "Microsoft.WindowsCamera_8wekyb3d8bbwe" "%param%"
 
+echo %blue%##############################
+echo %blue%MSSTORE
+echo %blue%##############################
+echo %purp%==============================
+echo %purp%Anwendungen
+echo %purp%==============================
 echo %green%Python 3.7
 winget uninstall %param% -e --id "9NJ46SX7X90P"
 echo %green%Python 3.8

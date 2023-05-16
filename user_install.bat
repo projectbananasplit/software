@@ -1,5 +1,5 @@
 @echo off
-set param=--accept-source-agreements --accept-package-agreements --silent
+set param=--accept-source-agreements --accept-package-agreements --scope user --silent
 
 @for /f %%a in ('echo prompt $E^| cmd') do set "esc=%%a"
 set red=%esc%[38;5;1m
@@ -75,5 +75,5 @@ echo %blue%##############################
 :winget install %param% -e --id "Figma.Figma"
 
 echo %green%Arduino
-winget install %param% --scope user -e --id "ArduinoSA.IDE.stable"
+winget install %param% -e --id "ArduinoSA.IDE.stable"
 
