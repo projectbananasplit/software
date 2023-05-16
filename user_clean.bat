@@ -61,8 +61,8 @@ echo %red%"                .&@@@@@#                                  /      *@  
 echo %red%"                         (@@@@@@%               ,         #      (*&@@@,%@.
 echo %red%"                                 .%@@@@@*       &     @@&%&@@@@(      &@(
 echo %red%"                                      @&#@@@@@@@@@@@@@/
-echo %red%
-echo %red%Burn & Uninstall unwanted and outdated software. (user-level)
+echo %red%"
+echo %red%"Burn & Uninstall unwanted and outdated software. (user-level)
 
 :winget uninstall -e --id "Microsoft.WindowsCamera_8wekyb3d8bbwe" "%param%"
 
@@ -80,3 +80,10 @@ echo %green%Python 3.9
 winget uninstall %param% -e --id "9P7QFQMJRFP7"
 echo %green%Google Chrome
 winget uninstall %param% --scope user -e --id "Google.Chrome"
+
+echo %purp%==============================
+echo %purp%Hersteller
+echo %purp%==============================
+:echo %green%HP Display Center
+: predeployed uninstall bug
+:winget uninstall %param% --scope user -e --name "HP Display Center"
