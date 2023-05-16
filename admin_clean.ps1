@@ -79,6 +79,7 @@ $Bloatware = @(
     #"*Microsoft.Windows.Photos*"
     #"*Microsoft.WindowsCalculator*"
     #"*Microsoft.WindowsStore*"
+    "Microsoft.Office.Desktop"
 
 )
 foreach ($Bloat in $Bloatware) {
