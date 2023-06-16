@@ -54,6 +54,8 @@ echo %green%Notepad++
 winget install %param% -e --id "Notepad++.Notepad++"
 echo %green%FreeCAD
 winget install %param% -e --id "FreeCAD.FreeCAD" --scope machine --force
+echo %green%Adobe Acrobat Reader DC (64-bit)
+winget install %param% -e --id "Adobe.Acrobat.Reader.64-bit" --scope machine
 
 
 echo %purp%==============================
