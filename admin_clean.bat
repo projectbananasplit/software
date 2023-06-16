@@ -44,6 +44,7 @@ echo %green%Adobe Acrobat Reader DC - Deutsch
 winget  uninstall %param% -e --id "{AC76BA86-7AD7-1031-7B44-AC0F074E4100}"
 echo %green%Adobe Acrobat DC
 winget  uninstall %param% -e --id "{AC76BA86-1033-FFFF-7760-0C0F074E4100}"
+winget  uninstall %param% -e --id "{AC76BA86-1033-FFFF-7760-BC15014EA700}"
 echo %green%Adobe Notification Client
 winget  uninstall %param% -e --id "AdobeNotificationClient_enpm4xejd91yc"
 
