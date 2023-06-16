@@ -59,6 +59,12 @@ echo %green%Python.Python.3.10
 winget  uninstall %param% -e --id "Python.Python.3.10"
 
 
+echo %purp%==============================
+echo %purp%Windows Erweiterungen
+echo %purp%==============================
+echo %green%Microsoft Visual C++ 2015-20XX Redistributable 32/64bit (fixworkaround)
+winget  uninstall %param% -e --id "{8bdfe669-9705-4184-9368-db9ce581e0e7}"
+
 
 echo %purp%==============================
 echo %purp%Microsoft
