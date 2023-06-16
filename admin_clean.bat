@@ -37,9 +37,6 @@ winget uninstall %param% --name "Magic Bullet Suite"
 echo %green%Ultimaker Cura
 winget uninstall %param% --name "Ultimaker Cura 4.13.0"
 
-echo %green%FreeCAD (user)
-winget uninstall %param%  -e --id "FreeCAD.FreeCAD" --scope user --force --purge
-
 echo %green%Arduino
 winget uninstall %param% -e --id "Arduino"
 
