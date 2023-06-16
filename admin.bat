@@ -6,3 +6,4 @@ call "admin_clean.bat"
 
 call "admin_install.bat"
 
+timeout 300

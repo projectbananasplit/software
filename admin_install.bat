@@ -53,7 +53,7 @@ winget install %param% -e --id "KiCad.KiCad"
 echo %green%Notepad++
 winget install %param% -e --id "Notepad++.Notepad++"
 echo %green%FreeCAD
-winget install %param% -e --id "FreeCAD.FreeCAD" --scope machine
+winget install %param% -e --id "FreeCAD.FreeCAD" --scope machine --force
 
 
 echo %purp%==============================
