@@ -62,5 +62,5 @@ echo %purp%==============================
 echo %purp%Windows Erweiterungen
 echo %purp%==============================
 echo %green%Microsoft Visual C++ 2015-20XX Redistributable 32/64bit
-winget install %param% -e --id "Microsoft.VCRedist.2015+.x64"
+winget install %param% -e --id "Microsoft.VCRedist.2015+.x64" --force
 winget install %param% -e --id "Microsoft.VCRedist.2015+.x86"
