@@ -64,3 +64,6 @@ echo %purp%==============================
 echo %green%Microsoft Visual C++ 2015-20XX Redistributable 32/64bit
 winget install %param% -e --id "Microsoft.VCRedist.2015+.x64" --force
 winget install %param% -e --id "Microsoft.VCRedist.2015+.x86"
+echo %green%%Microsoft Visual C++ 2013
+winget install %param% -e --id "Microsoft.VCRedist.2013.x64"
+winget install %param% -e --id "Microsoft.VCRedist.2013.x86"
