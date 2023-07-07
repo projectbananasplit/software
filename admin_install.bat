@@ -53,7 +53,7 @@ winget install %param% -e --id "KiCad.KiCad"
 echo %green%Notepad++
 winget install %param% -e --id "Notepad++.Notepad++"
 echo %green%FreeCAD
-winget install %param% -e --id "FreeCAD.FreeCAD" --scope machine --force
+winget install %param% -e --id "FreeCAD.FreeCAD" --scope machine
 echo %green%Adobe Acrobat Reader DC (64-bit)
 winget install %param% -e --id "Adobe.Acrobat.Reader.64-bit" --scope machine
 
@@ -62,8 +62,9 @@ echo %purp%==============================
 echo %purp%Windows Erweiterungen
 echo %purp%==============================
 echo %green%Microsoft Visual C++ 2015-20XX Redistributable 32/64bit
-winget install %param% -e --id "Microsoft.VCRedist.2015+.x64" --force
+winget install %param% -e --id "Microsoft.VCRedist.2015+.x64"
 winget install %param% -e --id "Microsoft.VCRedist.2015+.x86"
 echo %green%%Microsoft Visual C++ 2013
 winget install %param% -e --id "Microsoft.VCRedist.2013.x64"
 winget install %param% -e --id "Microsoft.VCRedist.2013.x86"
+: Microsoft Visual C++ 2005 problem currently not solved
