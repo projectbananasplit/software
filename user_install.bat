@@ -1,5 +1,5 @@
 @echo off
-set param=--accept-source-agreements --accept-package-agreements --scope user --silent
+set param=--uninstall-previous --accept-source-agreements --accept-package-agreements --scope user --silent
 
 @for /f %%a in ('echo prompt $E^| cmd') do set "esc=%%a"
 set red=%esc%[38;5;1m
