@@ -40,8 +40,16 @@ winget uninstall %param% --name "Ultimaker Cura 4.13.0"
 echo %green%Arduino
 winget uninstall %param% --purge -e --id "Arduino"
 
+echo %green%Vectric Shell Extensions
+winget uninstall %param% --purge --name "VectricThumbnailShellExt"
+
 echo %green%Autodesk
 winget uninstall %param% --purge --name "Autodesk ReCap"
+winget uninstall %param% --purge -e --id {11b0543e-b0f6-438b-8de5-ac6bbe34cc8f}
+winget uninstall %param% --purge -e --id {6C8DF0C5-75E5-320E-BD59-58C49EEBC545}
+winget uninstall %param% --purge -e --id {9DD49997-8BD2-30E8-B50C-C5569FA91FDA}
+winget uninstall %param% --purge -e --id {11b0543e-b0f6-438b-8de5-ac6bbe34cc8f}
+:winget uninstall %param% --purge -e --id
 
 echo %green%JMP
 winget uninstall %param% --purge -e --name "JMP 17 (Trial)"
