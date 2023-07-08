@@ -16,7 +16,7 @@ $Bloatware = @(
     "Microsoft.Office.Sway"
     "Microsoft.OneConnect"
     "Microsoft.People"
-    #"Microsoft.Print3D"
+    "Microsoft.Print3D"
     "Microsoft.RemoteDesktop"
     "Microsoft.SkypeApp"
     #"Microsoft.StorePurchaseApp"
