@@ -39,6 +39,7 @@ echo %green%Magic Bullet Suite
 winget uninstall %param% --name "Magic Bullet Suite"
 
 echo %green%Ultimaker Cura
+winget uninstall %param% --name "Ultimaker Cura 4.10.0"
 winget uninstall %param% --name "Ultimaker Cura 4.13.0"
 
 echo %green%Arduino
