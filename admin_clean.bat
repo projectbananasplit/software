@@ -58,7 +58,7 @@ winget uninstall %param% --purge -e --id {11b0543e-b0f6-438b-8de5-ac6bbe34cc8f}
 :winget uninstall %param% --purge -e --id
 
 echo %green%JMP
-winget uninstall %param% --purge -e --name "JMP 16 (Trial)"
+winget uninstall %param% --purge -e --name "JMP Trial 16"
 winget uninstall %param% --purge -e --name "JMP 17 (Trial)"
 
 echo %green%FARO LS 1.1.800.4 (64bit)
