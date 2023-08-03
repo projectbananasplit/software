@@ -58,6 +58,7 @@ winget uninstall %param% --purge -e --id {11b0543e-b0f6-438b-8de5-ac6bbe34cc8f}
 :winget uninstall %param% --purge -e --id
 
 echo %green%JMP
+winget uninstall %param% --purge -e --name "JMP 16 (Trial)"
 winget uninstall %param% --purge -e --name "JMP 17 (Trial)"
 
 echo %green%FARO LS 1.1.800.4 (64bit)
@@ -72,6 +73,9 @@ winget  uninstall %param% -e --id "{AC76BA86-1033-FFFF-7760-0C0F074E4100}"
 winget  uninstall %param% -e --id "{AC76BA86-1033-FFFF-7760-BC15014EA700}"
 echo %green%Adobe Notification Client
 winget  uninstall %param% -e --id "AdobeNotificationClient_enpm4xejd91yc"
+
+echo %green%Bonjour
+winget  uninstall %param% -e --name "Bonjour"
 
 echo %green%Python.Python.3.6
 winget  uninstall %param% -e --id "Python.Python.3.6"
