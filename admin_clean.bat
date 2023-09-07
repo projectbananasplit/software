@@ -42,6 +42,7 @@ echo %green%Ultimaker Cura
 winget uninstall %param% --name "Ultimaker Cura 4.10.0"
 winget uninstall %param% --name "Ultimaker Cura 4.13.0"
 winget uninstall %param% --name "Ultimaker Cura 4.13.1"
+winget uninstall %param% --name "Ultimaker Cura 5.3.1"
 
 echo %green%Arduino
 winget uninstall %param% --purge -e --id "Arduino"
