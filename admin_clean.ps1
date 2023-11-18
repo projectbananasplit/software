@@ -7,6 +7,7 @@ $Bloatware = @(
     "Microsoft.BingNews"
     "Microsoft.BingTravel"
     "Microsoft.BioEnrollment"
+    "Microsoft.DevHome"
     "Microsoft.GamingApp"
     "Microsoft.GetHelp"
     "Microsoft.Getstarted"
