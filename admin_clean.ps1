@@ -22,6 +22,7 @@ $Bloatware = @(
     "Microsoft.Office.Sway"
     "Microsoft.Office.Todo.List"
     "Microsoft.OneConnect"
+    "Microsoft.OutlookForWindows"
     "Microsoft.People"
     "Microsoft.PowerAutomateDesktop"
     "Microsoft.Print3D"
