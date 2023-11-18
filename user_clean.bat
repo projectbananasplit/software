@@ -86,6 +86,10 @@ echo %green%Outlook for Windows
 winget uninstall %param% -e --id "9NRX63209R7B"
 echo %green%Google Chrome
 winget uninstall %param% --scope user -e --id "Google.Chrome"
+echo %green%MS DevHome
+winget uninstall %param% -e --id "Microsoft.DevHome"
+echo %green%WhatsApp
+winget uninstall %param% -e --name "WhatsApp"
 
 :echo %green%inkstitch
 :winget uninstall %param% -e --id org.inkstitch.app_is1
