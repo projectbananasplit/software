@@ -80,6 +80,8 @@ echo %green%Python 3.9
 winget uninstall %param% -e --id "9P7QFQMJRFP7"
 echo %green%Python 3.10
 winget uninstall %param% -e --id "9PJPW5LDXLZ5"
+echo %green%Python 3.12
+winget uninstall %param% -e --id "9NCVDN91XZQP"
 echo %green%Google Chrome
 winget uninstall %param% --scope user -e --id "Google.Chrome"
 
