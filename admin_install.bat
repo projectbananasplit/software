@@ -26,8 +26,8 @@ echo %yellow%"   `"""""""""""`
 echo %blue%##############################
 echo %blue%MSSTORE
 echo %blue%##############################
-: VLC nicht up to date
-: winget install %param% -e --id "XPDM1ZW6815MQM"
+:: VLC nicht up to date
+:: winget install %param% -e --id "XPDM1ZW6815MQM"
 
 echo %blue%##############################
 echo %blue%winget
@@ -65,4 +65,4 @@ winget install %param% -e --id "Microsoft.VCRedist.2015+.x86"
 echo %green%%Microsoft Visual C++ 2013
 winget install %param% -e --id "Microsoft.VCRedist.2013.x64"
 winget install %param% -e --id "Microsoft.VCRedist.2013.x86"
-: Microsoft Visual C++ 2005 problem currently not solved
+:: Microsoft Visual C++ 2005 problem currently not solved

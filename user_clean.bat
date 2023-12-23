@@ -64,7 +64,7 @@ echo %red%"                                      @&#@@@@@@@@@@@@@/
 echo %red%"
 echo %red%"Burn & Uninstall unwanted and outdated software. (user-level)
 
-:winget uninstall -e --id "Microsoft.WindowsCamera_8wekyb3d8bbwe" "%param%"
+::winget uninstall -e --id "Microsoft.WindowsCamera_8wekyb3d8bbwe" "%param%"
 
 echo %blue%##############################
 echo %blue%MSSTORE
@@ -91,12 +91,12 @@ winget uninstall %param% -e --id "Microsoft.DevHome"
 echo %green%WhatsApp
 winget uninstall %param% -e --name "WhatsApp"
 
-:echo %green%inkstitch
-:winget uninstall %param% -e --id org.inkstitch.app_is1
+::echo %green%inkstitch
+::winget uninstall %param% -e --id org.inkstitch.app_is1
 
 echo %purp%==============================
 echo %purp%Hersteller
 echo %purp%==============================
-:echo %green%HP Display Center
-: predeployed uninstall bug
-:winget uninstall %param% --scope user -e --name "HP Display Center"
+::echo %green%HP Display Center
+:: predeployed uninstall bug
+::winget uninstall %param% --scope user -e --name "HP Display Center"
