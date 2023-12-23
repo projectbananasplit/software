@@ -34,8 +34,6 @@ echo %blue%winget
 echo %blue%##############################
 echo %green%Git
 winget install %param% -e --id "Git.Git"
-:echo %green%Python.Python.3.10
-:winget install %param% -e --id "Python.Python.3.10"
 echo %green%VLC
 winget install %param% -e --id "VideoLAN.VLC"
 echo %green%PrusaSlicer
