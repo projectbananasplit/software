@@ -54,17 +54,17 @@ echo %green%Autodesk
 winget uninstall %param% --purge --name "Autodesk ReCap"
 winget uninstall %param% --purge -e --id {11b0543e-b0f6-438b-8de5-ac6bbe34cc8f}
 winget uninstall %param% --purge -e --id {6C8DF0C5-75E5-320E-BD59-58C49EEBC545}
-:winget uninstall %param% --purge -e --id {9DD49997-8BD2-30E8-B50C-C5569FA91FDA}
+::winget uninstall %param% --purge -e --id {9DD49997-8BD2-30E8-B50C-C5569FA91FDA}
 winget uninstall %param% --purge -e --id {11b0543e-b0f6-438b-8de5-ac6bbe34cc8f}
-:winget uninstall %param% --purge -e --id
+::winget uninstall %param% --purge -e --id
 
 echo %green%JMP
 winget uninstall %param% --purge -e --name "JMP Trial 16"
 winget uninstall %param% --purge -e --name "JMP 17 (Trial)"
 
 echo %green%FARO LS 1.1.800.4 (64bit)
-: FARO LS 1.1.800.4 (64bit) {FA52D494-A7D5-4C3B-99E1-F8A66A6EEBDC} 8.0.4.5330
-: FARO LS 1.1.700.0 (64bit) {FF6E9382-0B85-48DE-888F-76EFD9A87038} 7.0.0.23
+:: FARO LS 1.1.800.4 (64bit) {FA52D494-A7D5-4C3B-99E1-F8A66A6EEBDC} 8.0.4.5330
+:: FARO LS 1.1.700.0 (64bit) {FF6E9382-0B85-48DE-888F-76EFD9A87038} 7.0.0.23
 winget uninstall %param% --purge -e --id {FA52D494-A7D5-4C3B-99E1-F8A66A6EEBDC}
 
 echo %green%Adobe Acrobat Reader DC - Deutsch
@@ -107,10 +107,10 @@ echo %purp%==============================
 echo %purp%Microsoft
 echo %purp%==============================
 echo %green%Microsoft Access database engine 2010 (English)
-: Microsoft Access database engine 2010 (English) 14.0.7015.1000
+:: Microsoft Access database engine 2010 (English) 14.0.7015.1000
 winget  uninstall %param% --purge -e --id  {90140000-00D1-0409-1000-0000000FF1CE}
 echo %green%Microsoft SQL Server 2014 Express LocalDB
-: Microsoft SQL Server 2014 Express LocalDB 12.3.6024.0
+:: Microsoft SQL Server 2014 Express LocalDB 12.3.6024.0
 winget  uninstall %param% --purge -e --id {BAF67399-85CD-4555-9B49-1F80EB921C35}
 
 echo %green%Office 365

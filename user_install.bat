@@ -63,16 +63,16 @@ echo %green%NanaZip
 winget install %param% -e --id "9N8G7TSCL18R"
 echo %green%Cinebench
 winget install %param% -e --id "9PGZKJC81Q7J"
-:echo %green%Visual Studio Code
-: "scope user" installer not found
-:winget install %param% -e --id "XP9KHM4BK9FZ7Q"
+::echo %green%Visual Studio Code
+:: "scope user" installer not found
+::winget install %param% -e --id "XP9KHM4BK9FZ7Q"
 
 : winget ========================
 echo %blue%##############################
 echo %blue%winget
 echo %blue%##############################
-: echo %green%Figma
-:winget install %param% -e --id "Figma.Figma"
+:: echo %green%Figma
+::winget install %param% -e --id "Figma.Figma"
 
 echo %green%Visual Studio Code
 winget install %param% -e --id "Microsoft.VisualStudioCode"
