@@ -63,8 +63,9 @@ winget uninstall %param% --purge -e --name "JMP Trial 16"
 winget uninstall %param% --purge -e --name "JMP 17 (Trial)"
 
 echo %green%FARO LS 1.1.800.4 (64bit)
-:: FARO LS 1.1.800.4 (64bit) {FA52D494-A7D5-4C3B-99E1-F8A66A6EEBDC} 8.0.4.5330
 :: FARO LS 1.1.700.0 (64bit) {FF6E9382-0B85-48DE-888F-76EFD9A87038} 7.0.0.23
+:: FARO LS 1.1.800.4 (64bit) {FA52D494-A7D5-4C3B-99E1-F8A66A6EEBDC} 8.0.4.5330
+winget uninstall %param% --purge -e --id {FF6E9382-0B85-48DE-888F-76EFD9A87038}
 winget uninstall %param% --purge -e --id {FA52D494-A7D5-4C3B-99E1-F8A66A6EEBDC}
 
 echo %green%Adobe Acrobat Reader DC - Deutsch
