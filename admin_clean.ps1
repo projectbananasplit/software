@@ -153,3 +153,20 @@ Set-ItemProperty $registryOEM  PreInstalledAppsEnabled -Value 0
 Set-ItemProperty $registryOEM  PreInstalledAppsEverEnabled -Value 0
 Set-ItemProperty $registryOEM  SilentInstalledAppsEnabled -Value 0
 Set-ItemProperty $registryOEM  SystemPaneSuggestionsEnabled -Value 0
+
+##Loop through users and do the same
+foreach ($sid in $UserSIDs)
+{
+    $registryOEM = "Registry::HKU\$sid\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager"
+    If (!(Test-Path $registryOEM))
+    {
+        New-Item $registryOEM
+    }
+    Set-ItemProperty $registryOEM  ContentDeliveryAllowed -Value 0
+    Set-ItemProperty $registryOEM  OemPreInstalledAppsEnabled -Value 0
+    Set-ItemProperty $registryOEM  PreInstalledAppsEnabled -Value 0
+    Set-ItemProperty $registryOEM  PreInstalledAppsEverEnabled -Value 0
+    Set-ItemProperty $registryOEM  SilentInstalledAppsEnabled -Value 0
+    Set-ItemProperty $registryOEM  SystemPaneSuggestionsEnabled -Value 0
+}
+
