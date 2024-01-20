@@ -1,5 +1,7 @@
 @echo off
-set param=--accept-source-agreements --accept-package-agreements --uninstall-previous --disable-interactivity --silent
+set param=--accept-source-agreements --accept-package-agreements --disable-interactivity --silent
+:: does not work properly with silent and disable-interactivity
+:: --uninstall-previous
 
 @for /f %%a in ('echo prompt $E^| cmd') do set "esc=%%a"
 set red=%esc%[38;5;1m
