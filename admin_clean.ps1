@@ -79,7 +79,7 @@ $Bloatware = @(
 #"*Microsoft.MSPaint*"
     "*Microsoft.MicrosoftStickyNotes*"
 #"*Microsoft.Windows.Photos*"
-#"*Microsoft.WindowsCalculator*"
+    "*Microsoft.WindowsCalculator*"
 #"*Microsoft.WindowsStore*"
 
 )

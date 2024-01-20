@@ -46,6 +46,8 @@ echo %green%AV1 Video Extension
 winget install %param% -e --id "9MVZQVXJBQ9V"
 echo %green%VP9 Video Erweiterung
 winget install %param% -e --id "9N4D0MSMP0PT"
+echo %green%Windows-Rechner
+winget install %param% -e --id "9WZDNCRFHVN5"
 echo %purp%==============================
 echo %purp%Anwendungen
 echo %purp%==============================

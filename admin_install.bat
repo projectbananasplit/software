@@ -34,6 +34,7 @@ echo %blue%##############################
 echo %blue%##############################
 echo %blue%winget
 echo %blue%##############################
+:: no user scoped installation available
 echo %green%Git
 winget install %param% -e --id "Git.Git"
 echo %green%VLC

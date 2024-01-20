@@ -11,60 +11,30 @@ set white=%esc%[38;5;15m
 
 echo %red%Burning Toaster
 echo %red%
-echo %red%"                                          %/
-echo %red%"                                        ,@   @.
-echo %red%"                                       @     @@
-echo %red%"                                                        *@@@/
-echo %red%"                                                    @,  &   @
-echo %red%"                                                   @          @
-echo %red%"                                                   @,(@     #(@
-echo %red%"                          ,@/@@                      @    ,@.
-echo %red%"                          @   .@       @   @
-echo %red%"                        *#     @      @*     @
-echo %red%"                         @@#@@*      @       @                     @@
-echo %red%"                                      @@@   @                     @# @
-echo %red%"                                                         @@,    @%@  @
-echo %red%"                         @@                            /& @     @ @@&
-echo %red%"                          @.@                        ,@   *#    #@
-echo %red%"                  @@     ,@  @      ,@ @            @      @.      .@#
-echo %red%"                #@ @    %@   @,    @  @    @@     @         @   ,@ @     @,
-echo %red%"               @  .@   %&,&@ @   @*   @    @ %@ ,@          &&@,  &,    ,@@
-echo %red%"             /%    @   %(% @@   @     @@ @@#    .                 @    %@  @
-echo %red%"             @     @     &@@  .@      @      /                    @.  @  ,&@
-echo %red%"             @,     @/    #% (@        @ @ ,# @   @@   #          @,  @@&
-echo %red%"           ,  @        @@@*   #          @*    @@ @   %@          @,
-echo %red%"           @*     @@        #@.             % @   @ @.  #         @
-echo %red%"            %     @   @,         &&          @    ,.    @        @(@@
-echo %red%"           @#.   .@      ,%     @  &               @    @@*@      #@  .
-echo %red%"          .%#.  @%.%         @ @ ..   #   /     ..  % .  /    . ,&    ..
-echo %red%"          . .(%  .%.       .  *% ..  .( (. (  @ ..  .*..& .   @# .    ..
-echo %red%"                %.  ,#                     @ @@     ,. @   %@
-echo %red%"                .%@    @                      /     & #   @
-echo %red%"    /@@@*        /@@    ,                    &    @   &  ,@@@#,
-echo %red%"  @@@/            %@@/  .                  *.   *#   .,  *       ,#@@@@#.
-echo %red%" @@          (@@#,        .#@@@#,          /   ,% %@@&,  &  @            ,@@@
-echo %red%" @#                      /&@%*        *%@@@@,  @   @            .%@#         @@
-echo %red%" @                                   /@@(               ,&@,                  @&
-echo %red%" @                                            &@@#*                           &@
-echo %red%"*@                                              /                             .@
-echo %red%"&@                                              @                              @
-echo %red%"@@                                              @                              @
-echo %red%"@@                                              &                              @
-echo %red%"/@                                              *               .#@&*,.%.      @
-echo %red%" @                                             .          @             .      @
-echo %red%" @                                             ,         .      %@  @&   ,    .@
-echo %red%"  @                                            (         ,      @(  //.  @    (@
-echo %red%"  (@                                           (         (      / .  @&  &    &@
-echo %red%"    @@@%                                       ,         #       ./   .  /    (@
-echo %red%"       @& @@@@&                                          /   &@     %@@   #    @
-echo %red%"                .&@@@@@#                                  /      *@   ,    *@&@*
-echo %red%"                         (@@@@@@%               ,         #      (*&@@@,%@.
-echo %red%"                                 .%@@@@@*       &     @@&%&@@@@(      &@(
-echo %red%"                                      @&#@@@@@@@@@@@@@/
-echo %red%"
+echo %red%"                          ░░    ░░
+echo %red%"                    ░░░░      ░░
+echo %red%"                            ░░
+echo %red%"                    ░░              ░░
+echo %red%"                          ░░      ░░
+echo %red%"                ░░▓▓▓▓▓▓▓▓▒▒▓▓▒▒▓▓▓▓▓▓▓▓░░
+echo %red%"                ▒▒▓▓░░░░░░░░░░░░░░░░░░▓▓▒▒
+echo %red%"                ▓▓░░░░░░░░░░░░░░░░░░░░░░▓▓
+echo %red%"                ▓▓░░░░░░░░░░░░░░░░░░░░  ▓▓
+echo %red%"                ▓▓▓▓░░░░░░  ░░░░░░░░░░▓▓▓▓
+echo %red%"                  ▒▒░░      ░░        ▒▒      ░░
+echo %red%"          ░░▒▒    ▒▒░░  ▓▓░░░░▒▒▓▓▒▒░░▒▒    ▒▒░░░░░░
+echo %red%"            ░░▒▒  ▒▒░░  ██▒▒░░▒▒████░░▒▒  ▒▒▒▒    ░░
+echo %red%"          ░░░░▒▒░░▒▒░░░░▒▒░░░░░░▒▒░░░░▒▒░░▒▒░░    ░░
+echo %red%"      ░░░░░░  ░░░░▒▒░░░░░░░░░░░░░░░░░░▒▒░░░░░░░░
+echo %red%"      ░░░░      ░░▒▒░░░░░░░░▒▒░░░░░░░░▒▒    ░░
+echo %red%"      ░░          ▒▒░░░░░░░░░░░░░░░░░░▒▒
+echo %red%"      ░░░░    ░░  ▒▒░░░░░░░░░░░░░░░░░░▒▒    ░░
+echo %red%"    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+echo %red%"  ░░                                                    ░░
+echo %red%"  ░░                                                    ░░░░
+echo %red%"░░                                                        ░░
+echo %red%
 echo %red%"Burn & Uninstall unwanted and outdated software. (user-level)
-
-::winget uninstall -e --id "Microsoft.WindowsCamera_8wekyb3d8bbwe" "%param%"
 
 echo %blue%##############################
 echo %blue%MSSTORE
