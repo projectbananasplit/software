@@ -48,8 +48,8 @@ echo %green%LibreOffice
 winget install %param% -e --id "TheDocumentFoundation.LibreOffice"
 echo %green%Cura
 winget install %param% -e --id "Ultimaker.Cura"
-echo %green%KiCad
-winget install %param% -e --id "KiCad.KiCad"
+::echo %green%KiCad
+::winget install %param% -e --id "KiCad.KiCad"
 echo %green%Notepad++
 winget install %param% -e --id "Notepad++.Notepad++"
 echo %green%FreeCAD
