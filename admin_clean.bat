@@ -42,6 +42,8 @@ echo %green%WinRAR
 winget uninstall %param% --purge -e --id "RARLab.WinRAR"
 echo %green%KeyShot
 winget uninstall %param% --purge -e --id "KeyShot 2023"
+echo %green%LightBurn
+winget uninstall %param% --purge -e --id "LightBurnSoftware.LightBurn"
 echo %green%Pentablet
 winget uninstall %param% --purge -e --name "Pentablet"
 echo %green%searcharchiver
@@ -148,6 +150,7 @@ echo %purp%==============================
 echo %green%HP
 winget uninstall %param% -e --name "HP Display Center"
 winget uninstall %param% -e --name "HP Documentation"
+winget uninstall %param% -e --name "HP PC Diagnostics Windows"
 
 echo %purp%==============================
 echo %purp%Badware
