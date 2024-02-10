@@ -144,8 +144,9 @@ asset\office365setup.exe /configure asset\office365remove.xml
 echo %purp%==============================
 echo %purp%Hersteller
 echo %purp%==============================
-echo %green%HP Display Center
+echo %green%HP
 winget uninstall %param% -e --name "HP Display Center"
+winget uninstall %param% -e --name "HP Documentation"
 
 echo %purp%==============================
 echo %purp%Badware
