@@ -37,9 +37,9 @@ echo %green%Maxon Cinema 4D R25
 winget uninstall %param% -e --id "Maxon Cinema 4D R25"
 echo %green%Magic Bullet Suite
 winget uninstall %param% --name "Magic Bullet Suite"
-echo %green%KeyShot
-winget uninstall %param% --purge -e --id "KeyRARLab.WinRAR"
 echo %green%WinRAR
+winget uninstall %param% --purge -e --id "RARLab.WinRAR"
+echo %green%KeyShot
 winget uninstall %param% --purge -e --id "KeyShot 2023"
 echo %green%KiCad
 winget uninstall %param% --purge -e --id "KiCad.KiCad" --version "5.1.10_1"
