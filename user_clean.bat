@@ -56,6 +56,9 @@ winget uninstall %param% -e --id "Microsoft.DevHome"
 echo %green%WhatsApp
 winget uninstall %param% -e --name "WhatsApp"
 
+echo %green%Blokdots
+winget uninstall %param% --purge -e --name "Blokdots Beta 0.5.4"
+
 ::echo %green%inkstitch
 ::winget uninstall %param% -e --id org.inkstitch.app_is1
 
