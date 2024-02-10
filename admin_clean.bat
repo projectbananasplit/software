@@ -37,6 +37,10 @@ echo %green%Maxon Cinema 4D R25
 winget uninstall %param% -e --id "Maxon Cinema 4D R25"
 echo %green%Magic Bullet Suite
 winget uninstall %param% --name "Magic Bullet Suite"
+echo %green%KeyShot
+winget uninstall %param% --purge -e --id "KeyShot 2023"
+echo %green%KiCad
+winget uninstall %param% --purge -e --id "KiCad.KiCad" --version "5.1.10_1"
 
 echo %green%Ultimaker Cura
 winget uninstall %param% --name "Ultimaker Cura 4.10.0"
