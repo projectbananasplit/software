@@ -42,11 +42,19 @@ winget uninstall %param% --purge -e --id "KeyShot 2023"
 echo %green%KiCad
 winget uninstall %param% --purge -e --id "KiCad.KiCad" --version "5.1.10_1"
 
+echo %green%Epic
+winget uninstall %param% --purge -e --name "Epic Games Launcher"
+winget uninstall %param% --purge -e --name "Epic Online Services"
+winget uninstall %param% --purge -e --name "Roblox Studio for Maker"
+winget uninstall %param% --purge -e --id "Roblox.Roblox"
+
 echo %green%Ultimaker Cura
 winget uninstall %param% --name "Ultimaker Cura 4.10.0"
 winget uninstall %param% --name "Ultimaker Cura 4.13.0"
 winget uninstall %param% --name "Ultimaker Cura 4.13.1"
 winget uninstall %param% --name "Ultimaker Cura 5.3.1"
+winget uninstall %param% --name "Ultimaker Cura 5.4.0"
+winget uninstall %param% --name "Ultimaker Cura 5.5.0"
 
 :: uninstall admin user scoped version
 echo %green%KiCad
