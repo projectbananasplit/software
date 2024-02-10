@@ -58,7 +58,7 @@ winget install %param% -e --id "XPDM27W10192Q0"
 echo %green%InkScape
 winget install %param% -e --id "9PD9BHGLFC7H"
 echo %green%Python 3.12
-winget uninstall %param% -e --id "9NCVDN91XZQP"
+winget install %param% -e --id "9NCVDN91XZQP"
 echo %green%Monitorian
 winget install %param% -e --id "9NW33J738BL0"
 echo %green%NanaZip
