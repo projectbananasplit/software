@@ -41,6 +41,10 @@ echo %green%WinRAR
 winget uninstall %param% --purge -e --id "RARLab.WinRAR"
 echo %green%KeyShot
 winget uninstall %param% --purge -e --id "KeyShot 2023"
+echo %green%Pentablet
+winget uninstall %param% --purge -e --name "Pentablet"
+echo %green%searcharchiver
+winget uninstall %param% --purge -e --name "searcharchiver"
 echo %green%KiCad
 winget uninstall %param% --purge -e --id "KiCad.KiCad" --version "5.1.10_1"
 
