@@ -53,6 +53,8 @@ echo %green%Google Chrome
 winget uninstall %param% --scope user -e --id "Google.Chrome"
 echo %green%MS DevHome
 winget uninstall %param% -e --id "Microsoft.DevHome"
+echo %green%MS BingSearch
+winget uninstall %param% -e --id "Microsoft.BingSearch_8wekyb3d8bbwe"
 echo %green%WhatsApp
 winget uninstall %param% -e --name "WhatsApp"
 

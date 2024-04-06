@@ -3,6 +3,7 @@ $Bloatware = @(
 #Unnecessary Windows 10/11 AppX Apps
     "Microsoft.549981C3F5F10"
     "Microsoft.BingNews"
+    "Microsoft.BingSearch"
     "Microsoft.GamingApp"
     "Microsoft.GetHelp"
     "Microsoft.Getstarted"
