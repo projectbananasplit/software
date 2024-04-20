@@ -7,4 +7,6 @@ powershell -noprofile -command "&{ start-process powershell -ArgumentList '-nopr
 call "admin_clean.bat"
 call "admin_install.bat"
 
+sfc /scannow
+
 timeout 300
