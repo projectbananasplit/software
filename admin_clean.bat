@@ -66,8 +66,8 @@ winget uninstall %param% --name "Ultimaker Cura 5.4.0"
 winget uninstall %param% --name "Ultimaker Cura 5.5.0"
 
 :: uninstall admin user scoped version
-echo %green%KiCad
-winget uninstall %param% --scope user --purge -e --id "KiCad.KiCad"
+:: echo %green%KiCad
+:: winget uninstall %param% --scope user --purge -e --id "KiCad.KiCad"
 
 echo %green%Arduino
 winget uninstall %param% --purge -e --id "Arduino"
