@@ -63,6 +63,12 @@ winget uninstall %param% -e --name "WhatsApp"
 echo %green%Blokdots
 winget uninstall %param% --purge -e --name "Blokdots Beta 0.5.4"
 
+echo %green%Figma
+winget uninstall %param% --purge -e --id "Figma.FigmaAgent"
+winget uninstall %param% --purge -e --id "Figma.Figma"
+
+::echo %green%Funde
+
 ::echo %green%inkstitch
 ::winget uninstall %param% -e --id org.inkstitch.app_is1
 
