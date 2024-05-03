@@ -59,6 +59,8 @@ echo %green%MS Copilot
 winget uninstall %param% -e --id "Microsoft.Windows.Ai.Copilot.Provider_8wekyb3d8bbwe"
 echo %green%WhatsApp
 winget uninstall %param% -e --name "WhatsApp"
+echo %green%Telegram
+winget uninstall %param% --purge -e --id "Telegram.TelegramDesktop"
 
 echo %green%Blokdots
 winget uninstall %param% --purge -e --name "Blokdots Beta 0.5.4"
