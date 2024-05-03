@@ -48,8 +48,6 @@ echo %green%Pentablet
 winget uninstall %param% --purge -e --name "Pentablet"
 echo %green%searcharchiver
 winget uninstall %param% --purge -e --name "searcharchiver"
-echo %green%KiCad
-winget uninstall %param% --purge -e --id "KiCad.KiCad" --version "5.1.10_1"
 
 echo %green%Epic
 winget uninstall %param% --purge -e --name "Epic Games Launcher"
@@ -67,6 +65,7 @@ winget uninstall %param% --name "Ultimaker Cura 5.5.0"
 
 :: uninstall admin user scoped version
 :: echo %green%KiCad
+:: winget uninstall %param% --purge -e --id "KiCad.KiCad" --version "5.1.10_1"
 :: winget uninstall %param% --scope user --purge -e --id "KiCad.KiCad"
 
 echo %green%Arduino
