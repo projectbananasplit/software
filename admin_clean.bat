@@ -158,3 +158,4 @@ echo %purp%==============================
 echo %green%Adware
 winget uninstall %param% --purge -e --id "cookieaq"
 winget uninstall %param% --purge -e --name "Web Companion"
+winget uninstall %param% --purge -e --name "Storage Security Software"
