@@ -90,10 +90,10 @@ winget install %param% -e --id "KNIMEAG.KNIMEAnalyticsPlatform"
 
 setlocal enabledelayedexpansion
 
-set "prefix=M-LEARN"
+set "prefix=MUC-LEARN"
 set "computerName=%COMPUTERNAME%"
 
-if "!computerName:~0,7!" == "%prefix%" (
+if "!computerName:~0,9!" == "%prefix%" (
     echo %blue%!!!!!!!!!!!!!!!!!!!!!!!
     echo %yellow%Learning room detected.
     echo %blue%!!!!!!!!!!!!!!!!!!!!!!!
