@@ -63,6 +63,7 @@ winget uninstall %param% --name "Ultimaker Cura 5.3.0"
 winget uninstall %param% --name "Ultimaker Cura 5.3.1"
 winget uninstall %param% --name "Ultimaker Cura 5.4.0"
 winget uninstall %param% --name "Ultimaker Cura 5.5.0"
+winget uninstall %param% --name "Ultimaker Cura 5.7.1"
 
 :: uninstall admin user scoped version
 :: echo %green%KiCad
