@@ -88,3 +88,20 @@ winget install %param% -e --id "KiCad.KiCad"
 echo %green%KNIME Analytics Platform
 winget install %param% -e --id "KNIMEAG.KNIMEAnalyticsPlatform"
 
+setlocal enabledelayedexpansion
+
+set "prefix=M-LEARN"
+set "computerName=%COMPUTERNAME%"
+
+if "!computerName:~0,7!" == "%prefix%" (
+    echo %blue%!!!!!!!!!!!!!!!!!!!!!!!
+    echo %yellow%Learning room detected.
+    echo %blue%!!!!!!!!!!!!!!!!!!!!!!!
+    echo %green%Miro: your visual workspace
+    winget install %param% -e --id "9N236HQQTVNH"
+
+) else (
+    echo %white%Learning room NOT detected.
+)
+
+endlocal
