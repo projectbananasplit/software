@@ -64,6 +64,9 @@ winget uninstall %param% --purge -e --id "Telegram.TelegramDesktop"
 
 echo %green%Blokdots
 winget uninstall %param% --purge -e --name "Blokdots Beta 0.5.4"
+winget uninstall %param% --purge -e --id "5672905e-5da1-5c9e-b80f-89f9a7d27ff3"
+echo %green%ProtoPie
+winget uninstall %param% --purge -e --id "StudioXID.ProtoPie"
 
 echo %green%Figma
 winget uninstall %param% --purge -e --id "Figma.FigmaAgent"
