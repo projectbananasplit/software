@@ -4,6 +4,7 @@ $Bloatware = @(
     "Microsoft.549981C3F5F10"
     "Microsoft.BingNews"
     "Microsoft.BingSearch"
+    "Microsoft.BingWeather"
     "Microsoft.GamingApp"
     "Microsoft.GetHelp"
     "Microsoft.Getstarted"
@@ -44,6 +45,12 @@ $Bloatware = @(
     "Microsoft.YourPhone"
     "Microsoft.ZuneMusic"
     "Microsoft.ZuneVideo"
+    "MicrosoftCorporationII.MicrosoftFamily"
+    "MicrosoftCorporationII.QuickAssist"
+    "MicrosoftWindows.Client.WebExperience"
+    "MicrosoftWindows.CrossDevice"
+    "MirametrixInc.GlancebyMirametrix"
+    "MSTeams"
     "MicrosoftTeams"
     "microsoft.windowscommunicationsapps"
 #Others
@@ -76,7 +83,6 @@ $Bloatware = @(
 #Optional: Typically not removed but you can if you need to for some reason
     "*Microsoft.Advertising.Xaml_10.1712.5.0_x64__8wekyb3d8bbwe*"
     "*Microsoft.Advertising.Xaml_10.1712.5.0_x86__8wekyb3d8bbwe*"
-    "*Microsoft.BingWeather*"
     "*Microsoft.Windows.Ai.Copilot.Provider*"
 #"*Microsoft.MSPaint*"
     "*Microsoft.MicrosoftStickyNotes*"
