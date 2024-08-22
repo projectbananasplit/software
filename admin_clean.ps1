@@ -178,3 +178,23 @@ foreach ($sid in $UserSIDs)
     Set-ItemProperty $registryOEM  SystemPaneSuggestionsEnabled -Value 0
 }
 
+
+############################################################################################################
+#                                        Remove Learn about this picture                                   #
+#                                                                                                          #
+############################################################################################################
+
+#Turn off Learn about this picture
+write-output "Disabling Learn about this picture"
+$picture = 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel'
+If (Test-Path $picture) {
+    Set-ItemProperty $picture -Name "{2cc5ca98-6485-489a-920e-b3e88a6ccce3}" -Value 1
+}
+
+##Loop through users and do the same
+foreach ($sid in $UserSIDs) {
+    $picture = "Registry::HKU\$sid\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"
+    If (Test-Path $picture) {
+        Set-ItemProperty $picture -Name "{2cc5ca98-6485-489a-920e-b3e88a6ccce3}" -Value 1
+    }
+}
