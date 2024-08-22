@@ -134,6 +134,14 @@ else {
     New-ItemProperty -Path $registryPath -Name $name -Value $value -PropertyType DWORD -Force | Out-Null
 }
 
+##Disable Feeds
+$registryPath = "HKLM:\SOFTWARE\Policies\Microsoft\Dsh"
+If (!(Test-Path $registryPath)) {
+    New-Item $registryPath
+}
+Set-ItemProperty $registryPath "AllowNewsAndInterests" -Value 0
+write-output "Disabled Feeds"
+
 #Stops the Windows Feedback Experience from sending anonymous data
 Write-Host "Stopping the Windows Feedback Experience program"
 $Period = "HKCU:\Software\Microsoft\Siuf\Rules"
