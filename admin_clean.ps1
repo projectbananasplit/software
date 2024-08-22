@@ -5,11 +5,14 @@ $Bloatware = @(
     "Microsoft.BingNews"
     "Microsoft.BingSearch"
     "Microsoft.BingWeather"
-    "Microsoft.GamingApp"
     "Microsoft.GetHelp"
     "Microsoft.Getstarted"
+    "Microsoft.GamingApp"
+    "Microsoft.HEVCVideoExtension"
     "Microsoft.Messaging"
     "Microsoft.Microsoft3DViewer"
+    "Microsoft.MicrosoftEdge.Stable"
+    "Microsoft.MicrosoftJournal"
     "Microsoft.MicrosoftOfficeHub"
     "Microsoft.MicrosoftSolitaireCollection"
     "Microsoft.MixedReality.Portal"
@@ -21,24 +24,31 @@ $Bloatware = @(
     "Microsoft.Office.Sway"
     "Microsoft.Office.Todo.List"
     "Microsoft.OneConnect"
+    "Microsoft.OneDriveSync"
     "Microsoft.OutlookForWindows"
     "Microsoft.People"
     "Microsoft.PowerAutomateDesktop"
+    "Microsoft.PowerAutomateDesktopCopilotPlugin"
     "Microsoft.Print3D"
     "Microsoft.RemoteDesktop"
     "Microsoft.SkypeApp"
-#"Microsoft.StorePurchaseApp"
+    #"Microsoft.StorePurchaseApp"
+    "Microsoft.Teams"
     "Microsoft.Todos"
     "Microsoft.Wallet"
     "Microsoft.Whiteboard"
+    "Microsoft.Windows.DevHome"
     "Microsoft.WindowsAlarms"
     "Microsoft.WindowsCamera"
+    "Microsoft.windowscommunicationsapps"
     "Microsoft.WindowsFeedbackHub"
     "Microsoft.WindowsMaps"
     "Microsoft.WindowsSoundRecorder"
+    #"Microsoft.WindowsStore"
     "Microsoft.Xbox.TCUI"
     "Microsoft.XboxApp"
     "Microsoft.XboxGameOverlay"
+    "Microsoft.XboxGamingOverlay"
     "Microsoft.XboxGamingOverlay_5.721.10202.0_neutral_~_8wekyb3d8bbwe"
     "Microsoft.XboxIdentityProvider"
     "Microsoft.XboxSpeechToTextOverlay"
@@ -52,7 +62,6 @@ $Bloatware = @(
     "MirametrixInc.GlancebyMirametrix"
     "MSTeams"
     "MicrosoftTeams"
-    "microsoft.windowscommunicationsapps"
 #Others
     "SpotifyAB.SpotifyMusic"
     "Disney.37853FC22B2CE"
@@ -91,13 +100,36 @@ $Bloatware = @(
 #"*Microsoft.WindowsStore*"
 
 )
-foreach ($Bloat in $Bloatware)
-{
-    Get-AppxPackage -allusers -Name $Bloat| Remove-AppxPackage -AllUsers
-    Get-AppxProvisionedPackage -Online | Where-Object DisplayName -like $Bloat | Remove-AppxProvisionedPackage -Online
-    Write-Host "Trying to remove $Bloat."
+
+$provisioned = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -in $Bloatware -and $_.DisplayName -notin $appstoignore -and $_.DisplayName -notlike 'MicrosoftWindows.Voice*' -and $_.DisplayName -notlike 'Microsoft.LanguageExperiencePack*' -and $_.DisplayName -notlike 'MicrosoftWindows.Speech*' }
+foreach ($appxprov in $provisioned) {
+    $packagename = $appxprov.PackageName
+    $displayname = $appxprov.DisplayName
+    write-output "Removing $displayname AppX Provisioning Package"
+    try {
+        Remove-AppxProvisionedPackage -PackageName $packagename -Online -ErrorAction SilentlyContinue
+        write-output "Removed $displayname AppX Provisioning Package"
+    }
+    catch {
+        write-output "Unable to remove $displayname AppX Provisioning Package"
+    }
 }
 
+
+$appxinstalled = Get-AppxPackage -AllUsers | Where-Object { $_.Name -in $Bloatware -and $_.Name -notin $appstoignore  -and $_.Name -notlike 'MicrosoftWindows.Voice*' -and $_.Name -notlike 'Microsoft.LanguageExperiencePack*' -and $_.Name -notlike 'MicrosoftWindows.Speech*'}
+foreach ($appxapp in $appxinstalled) {
+    $packagename = $appxapp.PackageFullName
+    $displayname = $appxapp.Name
+    write-output "$displayname AppX Package exists"
+    write-output "Removing $displayname AppX Package"
+    try {
+        Remove-AppxPackage -Package $packagename -AllUsers -ErrorAction SilentlyContinue
+        write-output "Removed $displayname AppX Package"
+    }
+    catch {
+        write-output "$displayname AppX Package does not exist"
+    }
+}
 
 #Disables Web Search in Start Menu
 Write-Host "Disabling Bing Search in Start Menu"
