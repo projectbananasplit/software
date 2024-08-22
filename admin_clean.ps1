@@ -251,3 +251,5 @@ foreach ($sid in $UserSIDs) {
         Set-ItemProperty $picture -Name "{2cc5ca98-6485-489a-920e-b3e88a6ccce3}" -Value 1
     }
 }
+
+Start-Sleep -Seconds 60
