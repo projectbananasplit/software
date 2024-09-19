@@ -162,6 +162,11 @@ echo %green%Sophos
 echo %green%OO Syspectr
 winget uninstall --silent -e --name "O&O Syspectr"
 
+NVIDIA legacy nview, ansel, nvwmi
+"C:\WINDOWS\SysWOW64\RunDll32.EXE" "C:\Program Files\NVIDIA Corporation\Installer2\InstallerCore\NVI2.DLL",UninstallPackage Ansel -silent
+"C:\windows\SysWOW64\RunDll32.EXE" "C:\Program Files\NVIDIA Corporation\Installer2\InstallerCore\NVI2.DLL",UninstallPackage Display.NView -silent
+"C:\WINDOWS\SysWOW64\RunDll32.EXE" "C:\Program Files\NVIDIA Corporation\Installer2\InstallerCore\NVI2.DLL",UninstallPackage Display.NVWMI -silent
+
 echo %purp%==============================
 echo %purp%Hersteller
 echo %purp%==============================
