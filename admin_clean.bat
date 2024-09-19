@@ -91,12 +91,14 @@ winget uninstall %param% --purge -e --name "JMP 17 (Trial)"
 
 echo %green%Rapidminer
 winget uninstall %param% --purge -e --name "RapidMiner Studio"
+del /f /q /s "C:\Program Files\RapidMiner" && rmdir /f /s "C:\Program Files\RapidMiner"
 
 echo %green%FARO LS 1.1.800.4 (64bit)
 :: FARO LS 1.1.700.0 (64bit) {FF6E9382-0B85-48DE-888F-76EFD9A87038} 7.0.0.23
 :: FARO LS 1.1.800.4 (64bit) {FA52D494-A7D5-4C3B-99E1-F8A66A6EEBDC} 8.0.4.5330
 winget uninstall %param% --purge -e --id {FF6E9382-0B85-48DE-888F-76EFD9A87038}
 winget uninstall %param% --purge -e --id {FA52D494-A7D5-4C3B-99E1-F8A66A6EEBDC}
+"C:\Program Files\FARO\FARO LS\unins000.exe" /silent
 
 echo %green%Adobe Acrobat Reader DC - Deutsch
 winget  uninstall %param% -e --id "{AC76BA86-7AD7-1031-7B44-AC0F074E4100}"
@@ -157,8 +159,8 @@ msiexec.exe /x {7349EC34-9EFF-4B3A-91DD-1960AD0F7451} /qn
 echo %green%Sophos
 "C:\Program Files\Sophos\Sophos Endpoint Agent\uninstallcli.exe" || winget uninstall %param% -e --name "Sophos Endpoint Agent" || true
 
-echo %green%Faro
-"C:\Program Files\FARO\FARO LS\unins000.exe" /silent
+echo %green%OO Syspectr
+winget uninstall --silent -e --name "O&O Syspectr"
 
 echo %purp%==============================
 echo %purp%Hersteller
