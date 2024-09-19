@@ -147,6 +147,18 @@ winget  uninstall %param% --purge -e --id {BAF67399-85CD-4555-9B49-1F80EB921C35}
 echo %green%Office 365
 asset\office365setup.exe /configure asset\office365remove.xml
 
+echo %purp%==============================
+echo %purp%Old Stack
+echo %purp%==============================
+
+echo %green%baramundi Management Agent
+msiexec.exe /x {7349EC34-9EFF-4B3A-91DD-1960AD0F7451} /qn
+
+echo %green%Sophos
+"C:\Program Files\Sophos\Sophos Endpoint Agent\uninstallcli.exe" || winget uninstall %param% -e --name "Sophos Endpoint Agent" || true
+
+echo %green%Faro
+"C:\Program Files\FARO\FARO LS\unins000.exe" /silent
 
 echo %purp%==============================
 echo %purp%Hersteller
@@ -156,11 +168,8 @@ winget uninstall %param% -e --name "HP Display Center"
 winget uninstall %param% -e --name "HP Documentation"
 winget uninstall %param% -e --name "HP PC Diagnostics Windows"
 
-echo %green%Sophos
-"C:\Program Files\Sophos\Sophos Endpoint Agent\uninstallcli.exe" || winget uninstall %param% -e --name "Sophos Endpoint Agent" || true
-
-echo %green%baramundi Management Agent
-msiexec.exe /x {7349EC34-9EFF-4B3A-91DD-1960AD0F7451} /qn
+echo %green%Fujitsu
+winget uninstall -h {903DC06E-50AC-4A15-A323-E4EFC1422764}
 
 echo %purp%==============================
 echo %purp%Badware
