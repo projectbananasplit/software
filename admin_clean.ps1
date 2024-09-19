@@ -36,7 +36,7 @@ $Bloatware = @(
     "Microsoft.GetHelp"
     "Microsoft.Getstarted"
     "Microsoft.GamingApp"
-    "Microsoft.HEVCVideoExtension"
+#"Microsoft.HEVCVideoExtension"
     "Microsoft.Messaging"
     "Microsoft.Microsoft3DViewer"
     "Microsoft.MicrosoftEdge.Stable"
