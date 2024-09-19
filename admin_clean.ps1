@@ -1,6 +1,34 @@
 ##Remove bloat
 $Bloatware = @(
 #Unnecessary Windows 10/11 AppX Apps
+    "*ActiproSoftwareLLC*"
+    "*AdobeSystemsIncorporated.AdobePhotoshopExpress*"
+    "*BubbleWitch3Saga*"
+    "*CandyCrush*"
+    "*DevHome*"
+    "*Disney*"
+    "*Dolby*"
+    "*Duolingo-LearnLanguagesforFree*"
+    "*EclipseManager*"
+    "*Facebook*"
+    "*Flipboard*"
+    "*gaming*"
+    "*Minecraft*"
+    "*Office*"
+    "*PandoraMediaInc*"
+    "*Royal Revolt*"
+    "*Speed Test*"
+    "*Spotify*"
+    "*Sway*"
+    "*Twitter*"
+    "*Wunderlist*"
+    "AD2F1837.HPPrinterControl"
+    "AppUp.IntelGraphicsExperience"
+    "C27EB4BA.DropboxOEM*"
+    "Disney.37853FC22B2CE"
+    "DolbyLaboratories.DolbyAccess"
+    "DolbyLaboratories.DolbyAudio"
+    "E0469640.SmartAppearance"
     "Microsoft.549981C3F5F10"
     "Microsoft.BingNews"
     "Microsoft.BingSearch"
@@ -16,26 +44,23 @@ $Bloatware = @(
     "Microsoft.MicrosoftOfficeHub"
     "Microsoft.MicrosoftSolitaireCollection"
     "Microsoft.MixedReality.Portal"
-    "Microsoft.NetworkSpeedTest"
+#"Microsoft.MPEG2VideoExtension"
     "Microsoft.News"
-    "Microsoft.Office.Desktop"
     "Microsoft.Office.Lens"
     "Microsoft.Office.OneNote"
     "Microsoft.Office.Sway"
-    "Microsoft.Office.Todo.List"
     "Microsoft.OneConnect"
     "Microsoft.OneDriveSync"
-    "Microsoft.OutlookForWindows"
     "Microsoft.People"
     "Microsoft.PowerAutomateDesktop"
     "Microsoft.PowerAutomateDesktopCopilotPlugin"
     "Microsoft.Print3D"
     "Microsoft.RemoteDesktop"
     "Microsoft.SkypeApp"
-    #"Microsoft.StorePurchaseApp"
+#"Microsoft.StorePurchaseApp"
+    "Microsoft.SysinternalsSuite"
     "Microsoft.Teams"
     "Microsoft.Todos"
-    "Microsoft.Wallet"
     "Microsoft.Whiteboard"
     "Microsoft.Windows.DevHome"
     "Microsoft.WindowsAlarms"
@@ -44,7 +69,7 @@ $Bloatware = @(
     "Microsoft.WindowsFeedbackHub"
     "Microsoft.WindowsMaps"
     "Microsoft.WindowsSoundRecorder"
-    #"Microsoft.WindowsStore"
+#"Microsoft.WindowsStore"
     "Microsoft.Xbox.TCUI"
     "Microsoft.XboxApp"
     "Microsoft.XboxGameOverlay"
@@ -61,72 +86,55 @@ $Bloatware = @(
     "MicrosoftWindows.CrossDevice"
     "MirametrixInc.GlancebyMirametrix"
     "MSTeams"
-    "MicrosoftTeams"
-#Others
+    "RealtimeboardInc.RealtimeBoard"
     "SpotifyAB.SpotifyMusic"
-    "Disney.37853FC22B2CE"
-    "*EclipseManager*"
-    "*ActiproSoftwareLLC*"
-    "*AdobeSystemsIncorporated.AdobePhotoshopExpress*"
-    "*Duolingo-LearnLanguagesforFree*"
-    "*PandoraMediaInc*"
-    "*CandyCrush*"
-    "*BubbleWitch3Saga*"
-    "*Wunderlist*"
-    "*Flipboard*"
-    "*Twitter*"
-    "*Facebook*"
-    "*Spotify*"
-    "*Minecraft*"
-    "*Royal Revolt*"
-    "*Sway*"
-    "*Speed Test*"
-    "*Dolby*"
-    "*Office*"
-    "*Disney*"
-    "clipchamp.clipchamp"
-    "*gaming*"
-    "MicrosoftCorporationII.MicrosoftFamily"
-    "C27EB4BA.DropboxOEM"
-    "*DevHome*"
+#Others custom
+    "Microsoft.NetworkSpeedTest"
+    "Microsoft.Office.Desktop"
+    "Microsoft.Office.Todo.List"
+    "Microsoft.OutlookForWindows"
+    "Microsoft.Wallet"
+
 #Optional: Typically not removed but you can if you need to for some reason
     "*Microsoft.Advertising.Xaml_10.1712.5.0_x64__8wekyb3d8bbwe*"
     "*Microsoft.Advertising.Xaml_10.1712.5.0_x86__8wekyb3d8bbwe*"
     "*Microsoft.Windows.Ai.Copilot.Provider*"
-#"*Microsoft.MSPaint*"
     "*Microsoft.MicrosoftStickyNotes*"
-#"*Microsoft.Windows.Photos*"
     "*Microsoft.WindowsCalculator*"
-#"*Microsoft.WindowsStore*"
-
 )
 
 $provisioned = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -in $Bloatware -and $_.DisplayName -notin $appstoignore -and $_.DisplayName -notlike 'MicrosoftWindows.Voice*' -and $_.DisplayName -notlike 'Microsoft.LanguageExperiencePack*' -and $_.DisplayName -notlike 'MicrosoftWindows.Speech*' }
-foreach ($appxprov in $provisioned) {
+foreach ($appxprov in $provisioned)
+{
     $packagename = $appxprov.PackageName
     $displayname = $appxprov.DisplayName
     write-output "Removing $displayname AppX Provisioning Package"
-    try {
+    try
+    {
         Remove-AppxProvisionedPackage -PackageName $packagename -Online -ErrorAction SilentlyContinue
         write-output "Removed $displayname AppX Provisioning Package"
     }
-    catch {
+    catch
+    {
         write-output "Unable to remove $displayname AppX Provisioning Package"
     }
 }
 
 
-$appxinstalled = Get-AppxPackage -AllUsers | Where-Object { $_.Name -in $Bloatware -and $_.Name -notin $appstoignore  -and $_.Name -notlike 'MicrosoftWindows.Voice*' -and $_.Name -notlike 'Microsoft.LanguageExperiencePack*' -and $_.Name -notlike 'MicrosoftWindows.Speech*'}
-foreach ($appxapp in $appxinstalled) {
+$appxinstalled = Get-AppxPackage -AllUsers | Where-Object { $_.Name -in $Bloatware -and $_.Name -notin $appstoignore -and $_.Name -notlike 'MicrosoftWindows.Voice*' -and $_.Name -notlike 'Microsoft.LanguageExperiencePack*' -and $_.Name -notlike 'MicrosoftWindows.Speech*' }
+foreach ($appxapp in $appxinstalled)
+{
     $packagename = $appxapp.PackageFullName
     $displayname = $appxapp.Name
     write-output "$displayname AppX Package exists"
     write-output "Removing $displayname AppX Package"
-    try {
+    try
+    {
         Remove-AppxPackage -Package $packagename -AllUsers -ErrorAction SilentlyContinue
         write-output "Removed $displayname AppX Package"
     }
-    catch {
+    catch
+    {
         write-output "$displayname AppX Package does not exist"
     }
 }
@@ -157,18 +165,21 @@ $registryPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Feeds"
 $Name = "EnableFeeds"
 $value = "0"
 
-if (!(Test-Path $registryPath)) {
+if (!(Test-Path $registryPath))
+{
     New-Item -Path $registryPath -Force | Out-Null
     New-ItemProperty -Path $registryPath -Name $name -Value $value -PropertyType DWORD -Force | Out-Null
 }
 
-else {
+else
+{
     New-ItemProperty -Path $registryPath -Name $name -Value $value -PropertyType DWORD -Force | Out-Null
 }
 
 ##Disable Feeds
 $registryPath = "HKLM:\SOFTWARE\Policies\Microsoft\Dsh"
-If (!(Test-Path $registryPath)) {
+If (!(Test-Path $registryPath))
+{
     New-Item $registryPath
 }
 Set-ItemProperty $registryPath "AllowNewsAndInterests" -Value 0
@@ -240,14 +251,17 @@ foreach ($sid in $UserSIDs)
 #Turn off Learn about this picture
 write-output "Disabling Learn about this picture"
 $picture = 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel'
-If (Test-Path $picture) {
+If (Test-Path $picture)
+{
     Set-ItemProperty $picture -Name "{2cc5ca98-6485-489a-920e-b3e88a6ccce3}" -Value 1
 }
 
 ##Loop through users and do the same
-foreach ($sid in $UserSIDs) {
+foreach ($sid in $UserSIDs)
+{
     $picture = "Registry::HKU\$sid\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"
-    If (Test-Path $picture) {
+    If (Test-Path $picture)
+    {
         Set-ItemProperty $picture -Name "{2cc5ca98-6485-489a-920e-b3e88a6ccce3}" -Value 1
     }
 }
