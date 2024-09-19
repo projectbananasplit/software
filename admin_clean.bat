@@ -159,6 +159,8 @@ winget uninstall %param% -e --name "HP PC Diagnostics Windows"
 echo %green%Sophos
 "C:\Program Files\Sophos\Sophos Endpoint Agent\uninstallcli.exe" || winget uninstall %param% -e --name "Sophos Endpoint Agent" || true
 
+echo %green%baramundi Management Agent
+msiexec.exe /x {7349EC34-9EFF-4B3A-91DD-1960AD0F7451} /qn
 
 echo %purp%==============================
 echo %purp%Badware
