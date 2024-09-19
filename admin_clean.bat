@@ -156,6 +156,10 @@ winget uninstall %param% -e --name "HP Display Center"
 winget uninstall %param% -e --name "HP Documentation"
 winget uninstall %param% -e --name "HP PC Diagnostics Windows"
 
+echo %green%Sophos
+"C:\Program Files\Sophos\Sophos Endpoint Agent\uninstallcli.exe" || winget uninstall %param% -e --name "Sophos Endpoint Agent" || true
+
+
 echo %purp%==============================
 echo %purp%Badware
 echo %purp%==============================
