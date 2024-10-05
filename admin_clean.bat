@@ -76,6 +76,9 @@ winget uninstall %param% -e --name "BigRep Blade"
 echo %green%Arduino
 winget uninstall %param% --purge -e --id "Arduino"
 
+echo %green%VLC
+winget uninstall %param% -e --id "VideoLAN.VLC" -v 3.0.20.0
+
 echo %green%Vectric Shell Extensions
 winget uninstall %param% --purge --name "VectricThumbnailShellExt"
 
