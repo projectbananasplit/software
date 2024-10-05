@@ -69,3 +69,23 @@ echo %green%%Microsoft Visual C++ 2013
 winget install %param% -e --id "Microsoft.VCRedist.2013.x64"
 winget install %param% -e --id "Microsoft.VCRedist.2013.x86"
 :: Microsoft Visual C++ 2005 problem currently not solved
+
+setlocal enabledelayedexpansion
+
+set "prefix=MUC-LEARN"
+set "computerName=%COMPUTERNAME%"
+
+if "!computerName:~0,9!" == "%prefix%" (
+    echo %blue%!!!!!!!!!!!!!!!!!!!!!!!
+    echo %yellow%Learning room detected.
+    echo %blue%!!!!!!!!!!!!!!!!!!!!!!!
+    if not %computerName% == "MUC-LEARN-01" (
+        echo %green%Vcarve V12
+        curl https://storage.googleapis.com/vectric_public/VCarveProTrialEdition_Setup.exe --output vcarvetrial.exe
+        vcarvetrial.exe /S
+        rm vcarvetrial.exe
+    )
+
+) else (
+    echo %white%Learning room NOT detected.
+)
