@@ -80,8 +80,9 @@ echo %blue%##############################
 
 echo %green%Visual Studio Code
 winget install %param% -e --id "Microsoft.VisualStudioCode"
-echo %green%Arduino
-winget install %param% -e --id "ArduinoSA.IDE.stable"
+::echo %green%Arduino
+::broken again
+::winget install %param% -e --id "ArduinoSA.IDE.stable"
 
 echo %green%KiCad
 winget install %param% -e --id "KiCad.KiCad"
