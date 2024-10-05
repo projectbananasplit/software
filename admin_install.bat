@@ -94,7 +94,7 @@ if "!computerName:~0,9!" == "%prefix%" (
         if %found% equ 0 (
             curl https://storage.googleapis.com/vectric_public/VCarveProTrialEdition_Setup.exe --output vcarvetrial.exe
             vcarvetrial.exe /S
-            rm vcarvetrial.exe
+            del vcarvetrial.exe
         )
         :end
         endlocal
