@@ -83,7 +83,7 @@ if "!computerName:~0,9!" == "%prefix%" (
         echo %green%Vcarve V12
         setlocal
         reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\VCarve Pro Trial EditionV120" /v Publisher >nul 2>&1
-        if %ERRORLEVEL% equ 0 (
+        if ERRORLEVEL 0 (
             echo skip install
         ) else (
             curl https://storage.googleapis.com/vectric_public/VCarveProTrialEdition_Setup.exe --output vcarvetrial.exe
