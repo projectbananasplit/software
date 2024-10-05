@@ -79,11 +79,25 @@ if "!computerName:~0,9!" == "%prefix%" (
     echo %blue%!!!!!!!!!!!!!!!!!!!!!!!
     echo %yellow%Learning room detected.
     echo %blue%!!!!!!!!!!!!!!!!!!!!!!!
-    if not %computerName% == "MUC-LEARN-01" (
+    if not %computerName% == "MUC-LEARN01" (
         echo %green%Vcarve V12
-        curl https://storage.googleapis.com/vectric_public/VCarveProTrialEdition_Setup.exe --output vcarvetrial.exe
-        vcarvetrial.exe /S
-        rm vcarvetrial.exe
+        setlocal
+        set "programName=VCarve"
+        set "found=0"
+
+        for /f "tokens=*" %%i in ('winget list --name "%programName%"') do (
+            set "found=1"
+            echo %programName% is installed.
+            goto :end
+        )
+
+        if %found% equ 0 (
+            curl https://storage.googleapis.com/vectric_public/VCarveProTrialEdition_Setup.exe --output vcarvetrial.exe
+            vcarvetrial.exe /S
+            rm vcarvetrial.exe
+        )
+        :end
+        endlocal
     )
 
 ) else (
