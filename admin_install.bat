@@ -81,7 +81,6 @@ if "!computerName:~0,9!" == "%prefix%" (
     echo %blue%!!!!!!!!!!!!!!!!!!!!!!!
     if not %computerName% == "MUC-LEARN01" (
         echo %green%Vcarve V12
-        setlocal
         set "programName=VCarve"
         set "found=0"
 
@@ -97,7 +96,6 @@ if "!computerName:~0,9!" == "%prefix%" (
             del vcarvetrial.exe
         )
         :end
-        endlocal
     )
 
 ) else (
