@@ -81,23 +81,17 @@ if "!computerName:~0,9!" == "%prefix%" (
     echo %blue%!!!!!!!!!!!!!!!!!!!!!!!
     if not %computerName% == "MUC-LEARN01" (
         echo %green%Vcarve V12
-        set "programName=VCarve"
-        set "found=0"
-
-        for /f "tokens=*" %%i in ('winget list --name "%programName%"') do (
-            set "found=1"
-            echo %programName% is installed.
-            goto :end
-        )
-
-        if %found% equ 0 (
+        setlocal
+        reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\VCarve Pro Trial EditionV120" /v Publisher >nul 2>&1
+        if %ERRORLEVEL% equ 0 (
+            echo skip install
+        ) else (
             curl https://storage.googleapis.com/vectric_public/VCarveProTrialEdition_Setup.exe --output vcarvetrial.exe
             vcarvetrial.exe /S
             del vcarvetrial.exe
         )
-        :end
+        endlocal
     )
-
 ) else (
     echo %white%Learning room NOT detected.
 )
