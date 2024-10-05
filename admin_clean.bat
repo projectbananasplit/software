@@ -65,6 +65,9 @@ winget uninstall %param% --name "Ultimaker Cura 5.4.0"
 winget uninstall %param% --name "Ultimaker Cura 5.5.0"
 winget uninstall %param% --name "Ultimaker Cura 5.7.1"
 
+echo %green%BigRep Blade
+winget uninstall %param% -e --name "BigRep Blade"
+
 :: uninstall admin user scoped version
 :: echo %green%KiCad
 :: winget uninstall %param% --purge -e --id "KiCad.KiCad" --version "5.1.10_1"
