@@ -102,7 +102,6 @@ if "!computerName:~0,9!" == "%prefix%" (
     echo %blue%!!!!!!!!!!!!!!!!!!!!!!!
     echo %green%Miro: your visual workspace
     winget install %param% -e --id "9N236HQQTVNH"
-
 ) else (
     echo %white%Learning room NOT detected.
 )
