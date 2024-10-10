@@ -68,6 +68,8 @@ winget uninstall %param% --name "Ultimaker Cura 5.7.1"
 echo %green%BigRep Blade
 winget uninstall %param% -e --name "BigRep Blade"
 
+winget uninstall -h -e --id "ARP\Machine\X64\VCarve Pro - Makerspace EditionV110"
+
 :: uninstall admin user scoped version
 :: echo %green%KiCad
 :: winget uninstall %param% --purge -e --id "KiCad.KiCad" --version "5.1.10_1"
