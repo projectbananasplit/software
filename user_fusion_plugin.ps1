@@ -18,7 +18,7 @@ if (!($appVersion -lt $newVersion))
 }
 else
 {
-    Write-Output "⌛ Detected $appVersion which is older than $newVersion ."
+    Write-Output "🔄 Detected $appVersion which is older than available $newVersion ."
     if (Test-Path -Path $pluginFolder)
     {
         Remove-Item -Path "$pluginFolder\*" -Recurse
