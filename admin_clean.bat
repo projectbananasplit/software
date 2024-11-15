@@ -149,10 +149,12 @@ echo %purp%Microsoft
 echo %purp%==============================
 echo %green%Microsoft Access database engine 2010 (English)
 :: Microsoft Access database engine 2010 (English) 14.0.7015.1000
-winget  uninstall %param% --purge -e --id  {90140000-00D1-0409-1000-0000000FF1CE}
+winget uninstall %param% --purge -e --id  {90140000-00D1-0409-1000-0000000FF1CE}
 echo %green%Microsoft SQL Server 2014 Express LocalDB
 :: Microsoft SQL Server 2014 Express LocalDB 12.3.6024.0
-winget  uninstall %param% --purge -e --id {BAF67399-85CD-4555-9B49-1F80EB921C35}
+winget uninstall %param% --purge -e --id {BAF67399-85CD-4555-9B49-1F80EB921C35}
+echo %green%Microsoft OneDrive
+winget uninstall %param% --purge -e --id "Microsoft.OneDrive"
 
 echo %green%Office 365
 asset\office365setup.exe /configure asset\office365remove.xml
