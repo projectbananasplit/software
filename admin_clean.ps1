@@ -208,6 +208,14 @@ foreach ($sid in $UserSIDs)
     Set-ItemProperty $Period PeriodInNanoSeconds -Value 0
 }
 
+##Disables games from showing in Search bar
+write-output "Adding Registry key to stop games from search bar"
+$registryPath = "HKLM:\	SOFTWARE\Policies\Microsoft\Windows\Windows Search"
+If (!(Test-Path $registryPath)) {
+    New-Item $registryPath
+}
+Set-ItemProperty $registryPath EnableDynamicContentInWSB -Value 0
+
 #Prevents bloatware applications from returning and removes Start Menu suggestions
 Write-Host "Adding Registry key to prevent bloatware apps from returning"
 $registryPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent"
