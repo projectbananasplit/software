@@ -173,7 +173,6 @@ if (!(Test-Path $registryPath))
     New-Item -Path $registryPath -Force | Out-Null
     New-ItemProperty -Path $registryPath -Name $name -Value $value -PropertyType DWORD -Force | Out-Null
 }
-
 else
 {
     New-ItemProperty -Path $registryPath -Name $name -Value $value -PropertyType DWORD -Force | Out-Null
@@ -211,7 +210,8 @@ foreach ($sid in $UserSIDs)
 ##Disables games from showing in Search bar
 write-output "Adding Registry key to stop games from search bar"
 $registryPath = "HKLM:\	SOFTWARE\Policies\Microsoft\Windows\Windows Search"
-If (!(Test-Path $registryPath)) {
+If (!(Test-Path $registryPath))
+{
     New-Item $registryPath
 }
 Set-ItemProperty $registryPath EnableDynamicContentInWSB -Value 0
