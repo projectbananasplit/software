@@ -106,6 +106,9 @@ winget uninstall %param% --purge --name "VectricThumbnailShellExt"
 
 echo %green%Autodesk
 winget uninstall %param% --purge --name "Autodesk ReCap"
+winget uninstall %param% --purge -e --name "Autodesk Access"
+winget uninstall %param% --purge -e --name "Autodesk Identity Manager"
+::winget uninstall %param% --purge -e --name "Autodesk Genuine Service"
 winget uninstall %param% --purge -e --id Autodesk.AutodeskAccess
 winget uninstall %param% --purge -e --id {11b0543e-b0f6-438b-8de5-ac6bbe34cc8f}
 winget uninstall %param% --purge -e --id {6C8DF0C5-75E5-320E-BD59-58C49EEBC545}
