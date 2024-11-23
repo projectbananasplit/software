@@ -296,5 +296,35 @@ if ($version -like "*Windows 10*") {
     write-output "Removed"
 }
 
+############################################################################################################
+#                                              Remove Recall                                               #
+#                                                                                                          #
+############################################################################################################
+
+#Turn off Recall
+write-output "Disabling Recall"
+$recall = "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsAI"
+If (!(Test-Path $recall)) {
+    New-Item $recall
+}
+Set-ItemProperty $recall DisableAIDataAnalysis -Value 1
+
+
+$recalluser = 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsAI'
+If (!(Test-Path $recalluser)) {
+    New-Item $recalluser
+}
+Set-ItemProperty $recalluser DisableAIDataAnalysis -Value 1
+
+##Loop through users and do the same
+foreach ($sid in $UserSIDs) {
+    $recallusers = "Registry::HKU\$sid\SOFTWARE\Policies\Microsoft\Windows\WindowsAI"
+    If (!(Test-Path $recallusers)) {
+        New-Item $recallusers
+    }
+    Set-ItemProperty $recallusers DisableAIDataAnalysis -Value 1
+}
+
+
 
 Start-Sleep -Seconds 60
