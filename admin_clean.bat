@@ -129,15 +129,19 @@ winget uninstall %param% --purge -e --id {FA52D494-A7D5-4C3B-99E1-F8A66A6EEBDC}
 "C:\Program Files\FARO\FARO LS\unins000.exe" /silent
 
 echo %green%Adobe Acrobat Reader DC - Deutsch
-winget  uninstall %param% -e --id "{AC76BA86-7AD7-1031-7B44-AC0F074E4100}"
+winget uninstall %param% -e --id "{AC76BA86-7AD7-1031-7B44-AC0F074E4100}"
 echo %green%Adobe Acrobat DC
-winget  uninstall %param% -e --id "{AC76BA86-1033-FFFF-7760-0C0F074E4100}"
-winget  uninstall %param% -e --id "{AC76BA86-1033-FFFF-7760-BC15014EA700}"
-echo %green%Adobe Notification Client
-winget  uninstall %param% -e --id "AdobeNotificationClient_enpm4xejd91yc"
+winget uninstall %param% -e --id "{AC76BA86-1033-FFFF-7760-0C0F074E4100}"
+winget uninstall %param% -e --id "{AC76BA86-1033-FFFF-7760-BC15014EA700}"
+echo %green%Adobe Stuff
+winget uninstall %param% -e --id "AdobeNotificationClient_enpm4xejd91yc"
+winget uninstall %param% -e --name "Adobe Notification Client"
+winget uninstall %param% -e --id "ARP\Machine\X86\AdobeGenuineService"
+echo %green%Intel
+winget uninstall %param% -e --name "Intel(R) Management Engine Components"
 
 echo %green%Bonjour
-winget  uninstall %param% -e --name "Bonjour"
+winget uninstall %param% -e --name "Bonjour"
 
 echo %green%Python.Python.3.6
 winget  uninstall %param% -e --id "Python.Python.3.6"
