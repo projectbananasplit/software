@@ -136,6 +136,7 @@ winget uninstall %param% -e --id "{AC76BA86-1033-FFFF-7760-BC15014EA700}"
 echo %green%Adobe Stuff
 winget uninstall %param% -e --id "AdobeNotificationClient_enpm4xejd91yc"
 winget uninstall %param% -e --name "Adobe Notification Client"
+winget uninstall %param% -e --name "Acrobat Notification Client"
 winget uninstall %param% -e --id "ARP\Machine\X86\AdobeGenuineService"
 echo %green%Intel
 winget uninstall %param% -e --name "Intel(R) Management Engine Components"
