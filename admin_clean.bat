@@ -9,6 +9,26 @@ set blue=%esc%[38;5;12m
 set purp=%esc%[38;5;13m
 set white=%esc%[38;5;15m
 
+echo %red%Burning Toaster
+echo %red%"          bC
+echo %red%"        CCCz
+echo %red%"       CCCCC
+echo %red%"       CCCCC
+echo %red%"       CCCCCCC
+echo %red%"       CCCCCCCCC
+echo %red%"  CC  CCCCCCCCCCC
+echo %red%"  CCCCCCCz CCCCCC  yL
+echo %red%" CCCCCCCC   CCCCCC CC
+echo %red%"CCCCCCCCC    CCCCCCCCC
+echo %red%"CCCCCCzC      CCCCCCCC
+echo %red%"CCCCC          C CCCCC
+echo %red%"zCCCC            CCCC
+echo %red%" zCCC            CCCo
+echo %red%"   CC            CC
+echo %red%"      C        C
+echo %red%
+echo %red%"Burn & Uninstall unwanted and outdated software. (user-level)
+
 echo %blue%##############################
 echo %blue%REMOVE if possible
 echo %blue%##############################
