@@ -71,6 +71,7 @@ winget uninstall %param% --purge -e --id "StudioXID.ProtoPie"
 echo %green%Adobe
 winget uninstall %param% -e --name "Adobe Notification Client"
 winget uninstall %param% -e --name "Acrobat Notification Client"
+winget uninstall %param% -e --name "Notification Manager for Acrobat Reader"
 
 echo %green%Figma
 winget uninstall %param% --purge -e --id "Figma.FigmaAgent"
