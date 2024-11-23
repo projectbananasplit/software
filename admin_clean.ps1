@@ -277,4 +277,24 @@ foreach ($sid in $UserSIDs)
     }
 }
 
+############################################################################################################
+#                                           Windows Backup App                                             #
+#                                                                                                          #
+############################################################################################################
+$version = Get-CimInstance Win32_OperatingSystem | Select-Object -ExpandProperty Caption
+if ($version -like "*Windows 10*") {
+    write-output "Removing Windows Backup"
+    $filepath = "C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\WindowsBackup\Assets"
+    if (Test-Path $filepath) {
+        Remove-WindowsPackage -Online -PackageName "Microsoft-Windows-UserExperience-Desktop-Package~31bf3856ad364e35~amd64~~10.0.19041.3393"
+
+        ##Add back snipping tool functionality
+        write-output "Adding Windows Shell Components"
+        DISM /Online /Add-Capability /CapabilityName:Windows.Client.ShellComponents~~~~0.0.1.0
+        write-output "Components Added"
+    }
+    write-output "Removed"
+}
+
+
 Start-Sleep -Seconds 60
