@@ -144,29 +144,33 @@ echo %green%Bonjour
 winget uninstall %param% -e --name "Bonjour"
 
 echo %green%Python.Python.3.6
-winget  uninstall %param% -e --id "Python.Python.3.6"
+winget uninstall %param% -e --id "Python.Python.3.6"
 echo %green%Python.Python.3.7
-winget  uninstall %param% -e --id "Python.Python.3.7"
+winget uninstall %param% -e --id "Python.Python.3.7"
 echo %green%Python.Python.3.8
-winget  uninstall %param% -e --id "Python.Python.3.8"
+winget uninstall %param% -e --id "Python.Python.3.8"
 echo %green%Python.Python.3.9
-winget  uninstall %param% -e --id "Python.Python.3.9"
+winget uninstall %param% -e --id "Python.Python.3.9"
 echo %green%Python.Python.3.10
-winget  uninstall %param% -e --id "Python.Python.3.10"
+winget uninstall %param% -e --id "Python.Python.3.10"
+echo %green%Python.Python.3.11
+winget uninstall %param% -e --id "Python.Python.3.11"
+echo %green%Python.Launcher
+winget uninstall %param% -e --id "Python.Launcher"
 
 
 echo %purp%==============================
 echo %purp%Windows Erweiterungen
 echo %purp%==============================
 echo %green%Microsoft Visual C++ 2015-20XX Redistributable 32/64bit (fixworkaround)
-winget  uninstall %param% -e --id "{8bdfe669-9705-4184-9368-db9ce581e0e7}"
-winget  uninstall %param% -e --id "{8bdfe669-9705-4184-9368-db9ce581e0e7}"
+winget uninstall %param% -e --id "{8bdfe669-9705-4184-9368-db9ce581e0e7}"
+winget uninstall %param% -e --id "{8bdfe669-9705-4184-9368-db9ce581e0e7}"
 
 echo %green%Microsoft Visual C++ 2013
-winget  uninstall %param% --name "Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.30501"
-winget  uninstall %param% --name "Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40660"
-winget  uninstall %param% --name "Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.40660"
-winget  uninstall %param% --name "Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.30501"
+winget uninstall %param% --name "Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.30501"
+winget uninstall %param% --name "Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40660"
+winget uninstall %param% --name "Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.40660"
+winget uninstall %param% --name "Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.30501"
 
 echo %purp%==============================
 echo %purp%Microsoft
