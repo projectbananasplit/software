@@ -139,7 +139,7 @@ winget uninstall %param% -e --name "Adobe Notification Client"
 winget uninstall %param% -e --id "ARP\Machine\X86\AdobeGenuineService"
 echo %green%Intel
 winget uninstall %param% -e --name "Intel(R) Management Engine Components"
-winget uninstall %param% -e --name "Intel(R) C++ Redistributables on Intel(R)"
+winget uninstall %param% -e --name "Intel(R) C++ Redistributables on Intel(R) 64"
 
 echo %green%Bonjour
 winget uninstall %param% -e --name "Bonjour"
