@@ -54,8 +54,8 @@ echo %green%Maxon Cinema 4D
 winget uninstall %param% -e --id "Maxon Cinema 4D R22"
 winget uninstall %param% -e --id "Maxon Cinema 4D R24"
 winget uninstall %param% -e --id "Maxon Cinema 4D R25"
-winget uninstall %param% -e --id "Maxon Cinema 4D 2023"
-winget uninstall %param% -e --id "Maxon Cinema 4D 2024"
+winget uninstall %param% -e --name "Maxon Cinema 4D 2023"
+winget uninstall %param% -e --name "Maxon Cinema 4D 2024"
 echo %green%Magic Bullet Suite
 winget uninstall %param% --name "Magic Bullet Suite"
 echo %green%WinRAR
