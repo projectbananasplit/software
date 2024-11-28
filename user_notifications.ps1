@@ -1,7 +1,7 @@
 ﻿Write-Host "Update Notifications" -ForegroundColor Green -BackgroundColor Gray
 
 $computerName = $env:COMPUTERNAME
-$targetComputerName = "G-CW-01"
+$targetComputerName = "G-CW-MS02"
 
 if ($computerName -eq $targetComputerName)
 {
