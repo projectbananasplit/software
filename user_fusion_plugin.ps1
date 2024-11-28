@@ -31,5 +31,4 @@ else
     Expand-Archive -Path $zipTempFilePath -DestinationPath $pluginFolder -Force
     Remove-Item -Path $zipTempFilePath -Force
     Write-Host "✅ Success"
-
 }
