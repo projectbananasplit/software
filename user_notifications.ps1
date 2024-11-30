@@ -36,11 +36,23 @@ We are closing in 5 minutes! Please start cleaning!'" /f
     # Write-Host -ForegroundColor Green "Dark theme enabled."
 
     $WallpaperPath = "$env:USERPROFILE\Pictures\wallpaper.png"
-    $Url = "https://github.com/projectbananasplit/assets/raw/refs/heads/main/wallpaper/test.png"
+    $Url = "https://github.com/projectbananasplit/assets/raw/refs/heads/main/wallpaper/ms_default.png"
+
+    Add-Type -TypeDefinition @"
+using System;
+using System.Runtime.InteropServices;
+public class ScreenResolution {
+    [DllImport("user32.dll")]
+    public static extern int GetSystemMetrics(int nIndex);
+}
+"@
+
+    $width = [ScreenResolution]::GetSystemMetrics(0)
+    $height = [ScreenResolution]::GetSystemMetrics(1)
+    Write-Output "Current Resolution: ${width}x${height}"
 
     Invoke-WebRequest -Uri $Url -OutFile $WallpaperPath
     Write-Host -ForegroundColor Yellow "Image downloaded to $WallpaperPath"
 
-    Download-Image -Url $ImageUrl -Path $WallpaperPath
     Set-Wallpaper -Path $WallpaperPath
 }
