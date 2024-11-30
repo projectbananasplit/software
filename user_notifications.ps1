@@ -11,4 +11,8 @@ if ($targetComputerNames -contains $computerName)
 We are closing in 15 minutes! Please start cleaning!'" /f
     schtasks /create /sc DAILY /st 19:55 /tn "PopupOeffnungszeitEnde5Min" /tr "msg * /TIME:300 'Wir schließen in 5 Minuten! Bitte aufräumen!
 We are closing in 5 minutes! Please start cleaning!'" /f
+
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "AppsUseLightTheme" -Value 0
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "SystemUsesLightTheme" -Value 0
+    # Write-Host -ForegroundColor Green "Dark theme enabled."
 }
