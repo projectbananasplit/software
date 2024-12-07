@@ -25,6 +25,21 @@ function Set-Wallpaper
     [Wallpaper]::SystemParametersInfo(0x0014, 0, $Path, 0x0001)
     Write-Host -ForegroundColor Yellow "Wallpaper updated to $Path"
 }
+function Set-Lockscreen
+{
+    param (
+        [string]$Path
+    )
+
+    $regKeyPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP"
+    $lockScreenImagePath = "LockScreenImagePath"
+    if (!(Test-Path -Path $regKeyPath))
+    {
+        New-Item -Path $regKeyPath -Force | Out-Null
+    }
+    Set-ItemProperty -Path $regKeyPath -Name $lockScreenImagePath -Value $Path
+    Write-Host -ForegroundColor Yellow "Lock screen  updated to $Path"
+}
 
 if ($targetComputerNames -contains $computerName)
 {
@@ -51,5 +66,6 @@ public class ScreenResolution {
     Invoke-WebRequest -Uri $Url -OutFile $WallpaperPath
     Write-Host -ForegroundColor Yellow "Image downloaded to $WallpaperPath"
 
+    Set-Lockscreen -Path $WallpaperPath
     Set-Wallpaper -Path $WallpaperPath
 }
