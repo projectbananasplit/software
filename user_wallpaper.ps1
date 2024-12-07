@@ -2,7 +2,8 @@
 
 $computerName = $env:COMPUTERNAME
 $targetComputerNames = @(
-    "M-CW-MS01", "M-CW-MS02", "M-CW-MS03", "M-CW-MS25",
+    "M-CW-MS01", "M-CW-MS02", "M-CW-MS03",
+    "M-CW-MS16", "M-CW-MS17", "M-CW-MS18", "M-CW-MS19", "M-CW-MS20", "M-CW-MS21", "M-CW-MS22", "M-CW-MS23", "M-CW-MS24", "M-CW-MS25", "M-CW-MS26",
     "MUC-LAS01", "MUC-LAS02", "MUC-LAS03", "MUC-LEARN11"
 )
 
