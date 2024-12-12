@@ -58,7 +58,7 @@ if ($targetComputerNames -contains $computerName)
     if ($rebootRequired)
     {
         Write-Output "A restart is required. Restarting the computer..."
-        Start-Sleep -Seconds 20
+        Start-Sleep -Seconds 60
         Restart-Computer -Force
     }
 
