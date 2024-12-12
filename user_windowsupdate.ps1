@@ -1,8 +1,8 @@
-﻿Write-Host "Update Wallpaper" -ForegroundColor Yellow -BackgroundColor Black
+﻿Write-Host "Force Windows Update" -ForegroundColor Yellow -BackgroundColor Black
 
 $computerName = $env:COMPUTERNAME
 $targetComputerNames = @(
-    "M-CW-MS16", "M-CW-MS17", "M-CW-MS18", "M-CW-MS19", "M-CW-MS20", "M-CW-MS21", "M-CW-MS22", "M-CW-MS23", "M-CW-MS24", "M-CW-MS25", "M-CW-MS26"
+    "M-CW-MS16"
 )
 
 function Get-ResultText
