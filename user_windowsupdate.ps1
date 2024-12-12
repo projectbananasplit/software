@@ -59,7 +59,7 @@ if ($targetComputerNames -contains $computerName)
     # Check if a reboot is required
     if ($installationResult.RebootRequired)
     {
-        Write-Output "A restart is required. Restarting the computer..."
+        Write-Output "A restart is required. Restarting the computer..." -ForegroundColor Black -BackgroundColor Red
         Start-Sleep -Seconds 60
         Restart-Computer -Force
     }
