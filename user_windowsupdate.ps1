@@ -35,33 +35,34 @@ function Get-ResultText
 
 if ($targetComputerNames -contains $computerName)
 {
-    $updateSession = New-Object -ComObject Microsoft.Update.Session
-    $updateSearcher = $updateSession.CreateUpdateSearcher()
-    $searchResult = $updateSearcher.Search("IsInstalled=0 AND IsHidden=0")
-    $rebootRequired = $false
+    # Check for updates
+    Write-Output "Checking for updates..."
+    $updates = New-Object -ComObject Microsoft.Update.Searcher
+    $searchResult = $updates.Search("IsInstalled=0")
 
-    foreach ($update in $searchResult.Updates)
+    # Install updates
+    Write-Output "Installing updates..."
+    $installer = New-Object -ComObject Microsoft.Update.Installer
+    $installer.Updates = $searchResult.Updates
+    $installationResult = $installer.Install()
+
+    # Output installed updates
+    Write-Output "Installed updates:"
+    foreach ($update in $installationResult.Updates)
     {
-        $updateInstaller = New-Object -ComObject Microsoft.Update.Installer
-        $updateInstaller.Updates.Add($update)
-        $result = $updateInstaller.Install()
-        Write-Output "Installed: $( $update.Title )"
-        $resultCode = $result.ResultCode
-        $resultText = Get-ResultText -resultCode $result.ResultCode
-        Write-Output "Result: $resultText"
-        if ($update.InstallationBehavior.RebootBehavior -ne 0)
-        {
-            $rebootRequired = $true
-        }
+        Write-Output $update.Title
     }
 
-    if ($rebootRequired)
+    $resultText = Get-ResultText -resultCode $installationResult.ResultCode
+    Write-Output "Installation result: $resultText"
+
+    # Check if a reboot is required
+    if ($installationResult.RebootRequired)
     {
         Write-Output "A restart is required. Restarting the computer..."
         Start-Sleep -Seconds 60
         Restart-Computer -Force
     }
-
     Write-Output "No restart is required."
     Start-Sleep -Seconds 10
 }
