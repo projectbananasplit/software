@@ -102,7 +102,7 @@ echo %green%"VLC <3.0.20.0"
 winget uninstall %param% -e --id "VideoLAN.VLC" -v 3.0.20.0
 
 echo %green%"PreForm <3.42.0.0"
-winget install %param% -e --id "Formlabs.PreForm" -v 3.42.0.0
+winget uninstall %param% -e --id "Formlabs.PreForm" -v 3.42.0.0
 
 echo %green%Vectric Shell Extensions
 winget uninstall %param% --purge --name "VectricThumbnailShellExt"
