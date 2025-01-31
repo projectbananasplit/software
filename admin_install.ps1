@@ -11,17 +11,17 @@ if ($targetComputerNames -contains $computerName)
     $infoFileVCarve = "C:\Program Files\VCarve Pro Trial Edition 12.0\ProductInfo.ini"
     $versionVCarve = Get-Content -Path $infoFileVCarve
     $outdatedVCarve = $versionVCarve | Where-Object { $_ -eq "product_version=12.0.0.9" }
-    Write-Host "✔️"
+    Write-Host ""
     if ($outdatedVCarve)
     {
         # Your specific code here
-        Write-Host "⚠️ VCarve Trial outdated."
-        Write-Host "➡️ Start update"
+        Write-Host " VCarve Trial outdated."
+        Write-Host " Start update"
 
         Invoke-WebRequest -Uri "https://storage.googleapis.com/vectric_public/VCarveProTrialEdition_Setup.exe" -OutFile "vcarvetrial.exe"
         Start-Process -FilePath "vcarvetrial.exe" -ArgumentList "/S" -Wait
         Remove-Item -Path "vcarvetrial.exe"
-        Write-Host "✅ End update"
+        Write-Host " End update"
     }
 }
 
