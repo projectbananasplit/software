@@ -278,14 +278,94 @@ foreach ($sid in $UserSIDs)
 }
 
 ############################################################################################################
+#                                     Disable Consumer Experiences                                         #
+#                                                                                                          #
+############################################################################################################
+
+#Disabling consumer experience
+write-output "Disabling consumer experience"
+$consumer = 'HKLM:\\SOFTWARE\Policies\Microsoft\Windows\CloudContent'
+If (Test-Path $consumer)
+{
+    Set-ItemProperty $consumer -Name "DisableWindowsConsumerFeatures" -Value 1
+}
+
+
+
+############################################################################################################
+#                                                   Disable Spotlight                                      #
+#                                                                                                          #
+############################################################################################################
+
+write-output "Disabling Windows Spotlight on lockscreen"
+$spotlight = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager'
+If (Test-Path $spotlight)
+{
+    Set-ItemProperty $spotlight -Name "RotatingLockScreenOverlayEnabled" -Value 0
+    Set-ItemProperty $spotlight -Name "RotatingLockScreenEnabled" -Value 0
+}
+
+##Loop through users and do the same
+foreach ($sid in $UserSIDs)
+{
+    $spotlight = "Registry::HKU\$sid\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager"
+    If (Test-Path $spotlight)
+    {
+        Set-ItemProperty $spotlight -Name "RotatingLockScreenOverlayEnabled" -Value 0
+        Set-ItemProperty $spotlight -Name "RotatingLockScreenEnabled" -Value 0
+    }
+}
+
+write-output "Disabling Windows Spotlight on background"
+$spotlight = 'HKCU:\Software\Policies\Microsoft\Windows\CloudContent'
+If (Test-Path $spotlight)
+{
+    Set-ItemProperty $spotlight -Name "DisableSpotlightCollectionOnDesktop" -Value 1
+    Set-ItemProperty $spotlight -Name "DisableWindowsSpotlightFeatures" -Value 1
+}
+
+##Loop through users and do the same
+foreach ($sid in $UserSIDs)
+{
+    $spotlight = "Registry::HKU\$sid\Software\Policies\Microsoft\Windows\CloudContent"
+    If (Test-Path $spotlight)
+    {
+        Set-ItemProperty $spotlight -Name "DisableSpotlightCollectionOnDesktop" -Value 1
+        Set-ItemProperty $spotlight -Name "DisableWindowsSpotlightFeatures" -Value 1
+    }
+}
+
+
+
+############################################################################################################
+#                                        Windows 11 Specific                                               #
+#                                                                                                          #
+############################################################################################################
+#Windows 11 Customisations
+write-output "Removing Windows 11 Customisations"
+
+
+##Disable Feeds
+$registryPath = "HKLM:\SOFTWARE\Policies\Microsoft\Dsh"
+If (!(Test-Path $registryPath))
+{
+    New-Item $registryPath
+}
+Set-ItemProperty $registryPath "AllowNewsAndInterests" -Value 0
+write-output "Disabled Feeds"
+
+
+############################################################################################################
 #                                           Windows Backup App                                             #
 #                                                                                                          #
 ############################################################################################################
 $version = Get-CimInstance Win32_OperatingSystem | Select-Object -ExpandProperty Caption
-if ($version -like "*Windows 10*") {
+if ($version -like "*Windows 10*")
+{
     write-output "Removing Windows Backup"
     $filepath = "C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\WindowsBackup\Assets"
-    if (Test-Path $filepath) {
+    if (Test-Path $filepath)
+    {
         Remove-WindowsPackage -Online -PackageName "Microsoft-Windows-UserExperience-Desktop-Package~31bf3856ad364e35~amd64~~10.0.19041.3393"
 
         ##Add back snipping tool functionality
@@ -296,6 +376,114 @@ if ($version -like "*Windows 10*") {
     write-output "Removed"
 }
 
+
+
+############################################################################################################
+#                                           Windows CoPilot                                                #
+#                                                                                                          #
+############################################################################################################
+$version = Get-CimInstance Win32_OperatingSystem | Select-Object -ExpandProperty Caption
+if ($version -like "*Windows 11*")
+{
+    write-output "Removing Windows Copilot"
+    # Define the registry key and value
+    $registryPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot"
+    $propertyName = "TurnOffWindowsCopilot"
+    $propertyValue = 1
+
+    # Check if the registry key exists
+    if (!(Test-Path $registryPath))
+    {
+        # If the registry key doesn't exist, create it
+        New-Item -Path $registryPath -Force | Out-Null
+    }
+
+    # Get the property value
+    $currentValue = Get-ItemProperty -Path $registryPath -Name $propertyName -ErrorAction SilentlyContinue
+
+    # Check if the property exists and if its value is different from the desired value
+    if ($null -eq $currentValue -or $currentValue.$propertyName -ne $propertyValue)
+    {
+        # If the property doesn't exist or its value is different, set the property value
+        Set-ItemProperty -Path $registryPath -Name $propertyName -Value $propertyValue
+    }
+
+
+    ##Grab the default user as well
+    $registryPath = "HKEY_USERS\.DEFAULT\Software\Policies\Microsoft\Windows\WindowsCopilot"
+    $propertyName = "TurnOffWindowsCopilot"
+    $propertyValue = 1
+
+    # Check if the registry key exists
+    if (!(Test-Path $registryPath))
+    {
+        # If the registry key doesn't exist, create it
+        New-Item -Path $registryPath -Force | Out-Null
+    }
+
+    # Get the property value
+    $currentValue = Get-ItemProperty -Path $registryPath -Name $propertyName -ErrorAction SilentlyContinue
+
+    # Check if the property exists and if its value is different from the desired value
+    if ($null -eq $currentValue -or $currentValue.$propertyName -ne $propertyValue)
+    {
+        # If the property doesn't exist or its value is different, set the property value
+        Set-ItemProperty -Path $registryPath -Name $propertyName -Value $propertyValue
+    }
+
+
+    ##Load the default hive from c:\users\Default\NTUSER.dat
+    reg load HKU\temphive "c:\users\default\ntuser.dat"
+    $registryPath = "registry::hku\temphive\Software\Policies\Microsoft\Windows\WindowsCopilot"
+    $propertyName = "TurnOffWindowsCopilot"
+    $propertyValue = 1
+
+    # Check if the registry key exists
+    if (!(Test-Path $registryPath))
+    {
+        # If the registry key doesn't exist, create it
+        [Microsoft.Win32.RegistryKey]$HKUCoPilot = [Microsoft.Win32.Registry]::Users.CreateSubKey("temphive\Software\Policies\Microsoft\Windows\WindowsCopilot", [Microsoft.Win32.RegistryKeyPermissionCheck]::ReadWriteSubTree)
+        $HKUCoPilot.SetValue("TurnOffWindowsCopilot", 0x1, [Microsoft.Win32.RegistryValueKind]::DWord)
+    }
+
+
+
+
+
+    $HKUCoPilot.Flush()
+    $HKUCoPilot.Close()
+    [gc]::Collect()
+    [gc]::WaitForPendingFinalizers()
+    reg unload HKU\temphive
+
+
+    write-output "Removed"
+
+
+    foreach ($sid in $UserSIDs)
+    {
+        $registryPath = "Registry::HKU\$sid\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot"
+        $propertyName = "TurnOffWindowsCopilot"
+        $propertyValue = 1
+
+        # Check if the registry key exists
+        if (!(Test-Path $registryPath))
+        {
+            # If the registry key doesn't exist, create it
+            New-Item -Path $registryPath -Force | Out-Null
+        }
+
+        # Get the property value
+        $currentValue = Get-ItemProperty -Path $registryPath -Name $propertyName -ErrorAction SilentlyContinue
+
+        # Check if the property exists and if its value is different from the desired value
+        if ($null -eq $currentValue -or $currentValue.$propertyName -ne $propertyValue)
+        {
+            # If the property doesn't exist or its value is different, set the property value
+            Set-ItemProperty -Path $registryPath -Name $propertyName -Value $propertyValue
+        }
+    }
+}
 ############################################################################################################
 #                                              Remove Recall                                               #
 #                                                                                                          #
@@ -304,27 +492,30 @@ if ($version -like "*Windows 10*") {
 #Turn off Recall
 write-output "Disabling Recall"
 $recall = "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsAI"
-If (!(Test-Path $recall)) {
+If (!(Test-Path $recall))
+{
     New-Item $recall
 }
 Set-ItemProperty $recall DisableAIDataAnalysis -Value 1
 
 
 $recalluser = 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\WindowsAI'
-If (!(Test-Path $recalluser)) {
+If (!(Test-Path $recalluser))
+{
     New-Item $recalluser
 }
 Set-ItemProperty $recalluser DisableAIDataAnalysis -Value 1
 
 ##Loop through users and do the same
-foreach ($sid in $UserSIDs) {
+foreach ($sid in $UserSIDs)
+{
     $recallusers = "Registry::HKU\$sid\SOFTWARE\Policies\Microsoft\Windows\WindowsAI"
-    If (!(Test-Path $recallusers)) {
+    If (!(Test-Path $recallusers))
+    {
         New-Item $recallusers
     }
     Set-ItemProperty $recallusers DisableAIDataAnalysis -Value 1
 }
-
 
 
 Start-Sleep -Seconds 60
