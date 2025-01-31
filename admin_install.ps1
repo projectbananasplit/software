@@ -1,14 +1,27 @@
-$infoFileVCarve = "C:\Program Files\VCarve Pro Trial Edition 12.0\ProductInfo.ini"
-$versionVCarve = Get-Content -Path $infoFileVCarve
-$outdatedVCarve = $versionVCarve | Where-Object { $_ -eq "product_version=12.0.0.9" }
-if ($outdatedVCarve)
-{
-    # Your specific code here
-    Write-Output "VCarve Trial outdated."
-    Write-Output "Start update"
+$computerName = $env:COMPUTERNAME
+$targetComputerNames = @(
+    "M-CW-MS16", "M-CW-MS17", "M-CW-MS18", "M-CW-MS19",
+    "M-CW-MS20", "M-CW-MS21", "M-CW-MS22", "M-CW-MS23", "M-CW-MS24", "M-CW-MS25",
+    "END"
+)
 
-    Invoke-WebRequest -Uri "https://storage.googleapis.com/vectric_public/VCarveProTrialEdition_Setup.exe" -OutFile "vcarvetrial.exe"
-    Start-Process -FilePath "vcarvetrial.exe" -ArgumentList "/S" -Wait
-    Remove-Item -Path "vcarvetrial.exe"
-    Write-Output "End update"
+if ($targetComputerNames -contains $computerName)
+{
+    $infoFileVCarve = "C:\Program Files\VCarve Pro Trial Edition 12.0\ProductInfo.ini"
+    $versionVCarve = Get-Content -Path $infoFileVCarve
+    $outdatedVCarve = $versionVCarve | Where-Object { $_ -eq "product_version=12.0.0.9" }
+    if ($outdatedVCarve)
+    {
+        # Your specific code here
+        Write-Output "VCarve Trial outdated."
+        Write-Output "Start update"
+
+        Invoke-WebRequest -Uri "https://storage.googleapis.com/vectric_public/VCarveProTrialEdition_Setup.exe" -OutFile "vcarvetrial.exe"
+        Start-Process -FilePath "vcarvetrial.exe" -ArgumentList "/S" -Wait
+        Remove-Item -Path "vcarvetrial.exe"
+        Write-Output "End update"
+    }
 }
+
+
+Start-Sleep -Seconds 60
