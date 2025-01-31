@@ -7,7 +7,7 @@ $targetComputerNames = @(
 
 if ($targetComputerNames -contains $computerName)
 {
-    Write-Host "🔍 Check VCarve ... " -NoNewline
+    Write-Host "Check VCarve ... " -NoNewline
     $infoFileVCarve = "C:\Program Files\VCarve Pro Trial Edition 12.0\ProductInfo.ini"
     $versionVCarve = Get-Content -Path $infoFileVCarve
     $outdatedVCarve = $versionVCarve | Where-Object { $_ -eq "product_version=12.0.0.9" }
