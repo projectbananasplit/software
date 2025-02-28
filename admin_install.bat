@@ -51,8 +51,6 @@ echo %green%Cura
 winget install %param% -e --id "Ultimaker.Cura"
 echo %green%PreForm
 winget install %param% -e --id "Formlabs.PreForm"
-::echo %green%KiCad
-::winget install %param% -e --id "KiCad.KiCad"
 echo %green%Notepad++
 winget install %param% -e --id "Notepad++.Notepad++"
 echo %green%FreeCAD
