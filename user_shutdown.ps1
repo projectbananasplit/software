@@ -12,7 +12,13 @@ if ($targetComputerNames -contains $computerName)
     Write-Output "💡 The computer is test pc for automatic shutdown."
     schtasks /create /sc DAILY /st 20:00 /tn "PopupShutdown5Min" /tr "msg * /TIME:300 'PC fährt herunter in 5 Minuten! Bitte Arbeit speichern!
 PC does shutdown in 5 minutes! Please save your work!'" /f
-    schtasks /create /sc DAILY /st 20:06 /tn "Shutdown" /tr "shutdown.exe /s /f /d p:4:1 /t 90 /c 'PC fährt herunter! PC shutdown! 1 Minute!'" /f
+    schtasks /delete /tn "Shutdown" /f
+    #schtasks /create /sc DAILY /st 20:06 /tn "Shutdown" /tr "shutdown.exe /s /f /d p:4:1 /t 90 /c 'PC fährt herunter! PC shutdown! 1 Minute!'" /f
+
+    $action = New-ScheduledTaskAction -Execute "shutdown.exe" -Argument "/s /f /d p:4:1 /t 90 /c 'PC fährt herunter! PC shutdown! 1 Minute!'"
+    $trigger = New-ScheduledTaskTrigger -Daily -At "20:06"
+    $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -WakeToRun
+    Register-ScheduledTask -TaskName "Shutdown" -Action $action -Trigger $trigger -Settings $settings -User "Maker"
 }
 else
 {
