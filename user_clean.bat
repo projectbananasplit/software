@@ -85,6 +85,10 @@ winget uninstall %param% --purge -e --id "Figma.Figma"
 ::winget uninstall %param% -e --id org.inkstitch.app_is1
 
 echo %purp%==============================
+echo %green%MS Clipchamp
+winget uninstall %param% -e --id "9P1J8S7CCWWT"
+
+echo %purp%==============================
 echo %purp%Hersteller
 echo %purp%==============================
 ::echo %green%HP Display Center
