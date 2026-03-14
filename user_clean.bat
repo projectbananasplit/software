@@ -79,6 +79,11 @@ echo %green%Figma
 winget uninstall %param% --purge -e --id "Figma.FigmaAgent"
 winget uninstall %param% --purge -e --id "Figma.Figma"
 
+
+Event stuff
+echo %green%KNIME Analytics Platform
+winget uninstall %param% --purge -e --id "KNIMEAG.KNIMEAnalyticsPlatform"
+
 ::echo %green%Funde
 
 ::echo %green%inkstitch

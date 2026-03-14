@@ -88,8 +88,8 @@ echo %green%KiCad
 winget install %param% -e --id "KiCad.KiCad"
 
 ::Event stuff
-echo %green%KNIME Analytics Platform
-winget install %param% -e --id "KNIMEAG.KNIMEAnalyticsPlatform"
+::echo %green%KNIME Analytics Platform
+::winget install %param% -e --id "KNIMEAG.KNIMEAnalyticsPlatform"
 
 setlocal enabledelayedexpansion
 
