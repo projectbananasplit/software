@@ -41,8 +41,6 @@ echo %green%VLC
 winget install %param% -e --id "VideoLAN.VLC"
 echo %green%PrusaSlicer
 winget install %param% -e --id "Prusa3D.PrusaSlicer"
-echo %green%Meshlab
-winget install %param% -e --id "CNRISTI.MeshLab"
 echo %green%OpenSCAD
 winget install %param% -e --id "OpenSCAD.OpenSCAD"
 echo %green%LibreOffice
@@ -52,7 +50,7 @@ winget install %param% -e --id "Ultimaker.Cura"
 echo %green%PreForm
 winget install %param% -e --id "Formlabs.PreForm"
 echo %green%Notepad++
-winget install %param% -e --id "Notepad++.Notepad++"
+winget install %param% -e --id "Notepad++.Notepad++" --scope u
 echo %green%FreeCAD
 winget install %param% -e --id "FreeCAD.FreeCAD" --scope machine
 echo %green%Adobe Acrobat Reader DC (64-bit)
