@@ -45,8 +45,8 @@ echo %green%Python 3.10
 winget uninstall %param% -e --id "9PJPW5LDXLZ5"
 echo %green%Python 3.11
 winget uninstall %param% -e --id "9NRWMJP3717K"
-::echo %green%Python 3.12
-::winget uninstall %param% -e --id "9NCVDN91XZQP"
+echo %green%Python 3.12
+winget uninstall %param% -e --id "9NCVDN91XZQP"
 echo %green%Outlook for Windows
 winget uninstall %param% -e --id "9NRX63209R7B"
 echo %green%Google Chrome
