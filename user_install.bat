@@ -53,7 +53,7 @@ winget install %param% -e --id "9WZDNCRFHVN5"
 echo %purp%==============================
 echo %purp%Anwendungen
 echo %purp%==============================
-echo %green%Blender
+echo %green%"Blender (current)"
 winget install %param% -e --id "9PP3C07GTVRH"
 echo %green%InkScape
 winget install %param% -e --id "9PD9BHGLFC7H"
