@@ -79,6 +79,8 @@ echo %blue%##############################
 
 echo %green%Python 3.14
 winget install %param% -e --id Python.Python.3.14
+echo %green%FreeCAD
+winget install %param% -e --id "FreeCAD.FreeCAD
 echo %green%Visual Studio Code
 winget install %param% -e --id "Microsoft.VisualStudioCode"
 

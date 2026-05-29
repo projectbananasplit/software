@@ -51,8 +51,6 @@ echo %green%PreForm
 winget install %param% -e --id "Formlabs.PreForm"
 echo %green%Notepad++
 winget install %param% -e --id "Notepad++.Notepad++" --scope u
-echo %green%FreeCAD
-winget install %param% -e --id "FreeCAD.FreeCAD" --scope machine
 echo %green%Adobe Acrobat Reader DC (64-bit)
 winget install %param% -e --id "Adobe.Acrobat.Reader.64-bit" --scope machine
 

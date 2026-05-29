@@ -166,7 +166,8 @@ echo %green%Python.Python.3.11
 winget uninstall %param% -e --id "Python.Python.3.11"
 echo %green%Python.Launcher
 winget uninstall %param% -e --id "Python.Launcher"
-
+echo %green%"FreeCAD <1.1.1"
+winget uninstall %param% -e --id "FreeCAD.FreeCAD" --scope machine  -v 1.1.0
 
 echo %purp%==============================
 echo %purp%Windows Erweiterungen
