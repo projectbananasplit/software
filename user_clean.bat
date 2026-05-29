@@ -98,6 +98,8 @@ winget uninstall %param% --purge -e --id "KNIMEAG.KNIMEAnalyticsPlatform"
 ::winget uninstall %param% -e --id org.inkstitch.app_is1
 
 echo %purp%==============================
+echo %green%Microsoft Teams
+winget uninstall %param% -e --id Microsoft.Teams.Free
 echo %green%MS Clipchamp
 winget uninstall %param% -e --id "9P1J8S7CCWWT"
 
