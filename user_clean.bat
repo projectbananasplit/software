@@ -45,14 +45,14 @@ echo %green%Python 3.10
 winget uninstall %param% -e --id "9PJPW5LDXLZ5"
 echo %green%Python 3.11
 winget uninstall %param% -e --id "9NRWMJP3717K"
-echo %green%Python 3.12
+::echo %green%Python 3.12
 ::bugged with 3.14
 ::winget uninstall %param% -e --id "9NCVDN91XZQP" --source msstore
-winget uninstall %param% -e --name "Python 3.12" --source msstore
-echo %green%Python 3.13
+::winget uninstall %param% -e --name "Python 3.12" --source msstore
+::echo %green%Python 3.13
 ::bugged with 3.14
 ::winget uninstall %param% -e --id "9PNRBTZXMB4Z"
-winget uninstall %param% -e --name "Python 3.13" --source msstore
+::winget uninstall %param% -e --name "Python 3.13" --source msstore
 echo %green%Outlook for Windows
 winget uninstall %param% -e --id "9NRX63209R7B"
 echo %green%Gimp 2.0
