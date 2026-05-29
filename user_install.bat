@@ -55,8 +55,6 @@ echo %purp%Anwendungen
 echo %purp%==============================
 echo %green%Blender
 winget install %param% -e --id "9PP3C07GTVRH"
-echo %green%Gimp
-winget install %param% -e --id "XPDM27W10192Q0"
 echo %green%InkScape
 winget install %param% -e --id "9PD9BHGLFC7H"
 echo %green%Monitorian
@@ -77,6 +75,8 @@ echo %blue%##############################
 :: echo %green%Figma
 ::winget install %param% -e --id "Figma.Figma"
 
+echo %green%GIMP 3
+winget install %param% -e --id GIMP.GIMP.3
 echo %green%Python 3.14
 winget install %param% -e --id Python.Python.3.14
 echo %green%FreeCAD

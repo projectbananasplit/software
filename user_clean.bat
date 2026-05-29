@@ -51,6 +51,8 @@ echo %green%Python 3.13
 winget uninstall %param% -e --id "9PNRBTZXMB4Z"
 echo %green%Outlook for Windows
 winget uninstall %param% -e --id "9NRX63209R7B"
+echo %green%Gimp 2.0
+winget uninstall %param% -e --id "XPDM27W10192Q0"
 echo %green%Google Chrome
 winget uninstall %param% --scope user -e --id "Google.Chrome"
 echo %green%MS DevHome
