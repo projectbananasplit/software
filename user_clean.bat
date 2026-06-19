@@ -88,7 +88,7 @@ winget uninstall %param% --purge -e --id "Figma.FigmaAgent"
 winget uninstall %param% --purge -e --id "Figma.Figma"
 
 echo %green%"GIMP 2.10.34"
-winget uninstall %param% -e --name "GIMP 2.10.34"
+winget uninstall %param% --purge --name "GIMP 2.10.34"
 
 echo %green%LinkedIn
 winget uninstall %param% -e --name "LinkedIn"
