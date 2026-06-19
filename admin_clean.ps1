@@ -563,7 +563,6 @@ Dism.exe /Online /Disable-Feature /NoRestart /featurename:SMB1Protocol
 Dism.exe /Online /Disable-Feature /NoRestart /featurename:TelnetClient
 Dism.exe /Online /Disable-Feature /NoRestart /featurename:WindowsMediaPlayer
 Dism.exe /Online /Disable-Feature /NoRestart /featurename:WorkFolders-Client
-Dism.exe /Online /Disable-Feature /NoRestart /featurename:Xps-Foundation-Xps-Viewer
 
 ############################################################################################################
 # Disable Microsoft Account Sign-in in Microsoft Edge
@@ -610,6 +609,8 @@ New-ItemProperty -Path $edgePolicyPath -Name "RestoreOnStartupURLs" -Value "http
 New-ItemProperty -Path $edgePolicyPath -Name "SyncDisabled" -Value 1 -PropertyType DWORD -Force | Out-Null
 New-ItemProperty -Path $edgePolicyPath -Name "HubsSidebarEnabled" -Value 0 -PropertyType DWORD -Force | Out-Null
 
+New-ItemProperty -Path $edgePolicyPath -Name "SearchSuggestEnabled" -Value 0 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $edgePolicyPath -Name "ShowSearchSuggestionsGlobal" -Value 0 -PropertyType DWORD -Force | Out-Null
 New-ItemProperty -Path $edgePolicyPath -Name "UserFeedbackAllowed" -Value 0 -PropertyType DWORD -Force | Out-Null
 New-ItemProperty -Path $edgePolicyPath -Name "PersonalizationReportingEnabled" -Value 0 -PropertyType DWORD -Force | Out-Null
 New-ItemProperty -Path $edgePolicyPath -Name "DiagnosticData" -Value 0 -PropertyType DWORD -Force | Out-Null
