@@ -569,11 +569,18 @@ function Ensure-Key($path) {
     }
 }
 
-# 1. Clipboard Privacy
+# Clipboard Privacy
 $sysPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System"
 Ensure-Key $sysPath
 Set-ItemProperty -Path $sysPath -Name "AllowClipboardHistory" -Value 0 -Type DWord -Force
 Set-ItemProperty -Path $sysPath -Name "AllowCrossDeviceClipboard" -Value 0 -Type DWord -Force
+Set-ItemProperty -Path $sysPath -Name "AllowInputPersonalization" -Value 0 -Type DWord -Force
+Set-ItemProperty -Path $sysPath -Name "DisablePrivacyExperience" -Value 1 -Type DWord -Force
+# Disable Activity History
+Set-ItemProperty -Path $sysPath -Name "EnableActivityFeed" -Value 0 -Type DWord -Force
+Set-ItemProperty -Path $sysPath -Name "PublishUserActivities" -Value 0 -Type DWord -Force
+Set-ItemProperty -Path $sysPath -Name "UploadUserActivities" -Value 0 -Type DWord -Force
+
 
 # Disable Advertising ID
 $advPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo"
