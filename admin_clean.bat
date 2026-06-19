@@ -193,6 +193,8 @@ echo %green%Microsoft SQL Server 2014 Express LocalDB
 winget uninstall %param% --purge -e --id {BAF67399-85CD-4555-9B49-1F80EB921C35}
 echo %green%Microsoft OneDrive
 winget uninstall %param% --purge -e --id "Microsoft.OneDrive"
+echo %green%Windows 10 stuff
+winget uninstall %param% --purge -e --id "ARP\Machine\X64\{85C69797-7336-4E83-8D97-32A7C8465A3B}"
 
 echo %green%Office 365
 asset\office365setup.exe /configure asset\office365remove.xml
