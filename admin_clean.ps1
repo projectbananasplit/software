@@ -357,6 +357,26 @@ foreach ($sid in $UserSIDs)
     }
 }
 
+write-output "Disabling welcome screen"
+$spotlight = 'HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Explorer'
+If (Test-Path $spotlight)
+{
+    Set-ItemProperty $spotlight -Name "NoWelcomeScreen" -Value 1
+    Set-ItemProperty $spotlight -Name "DisableGraphRecentItems" -Value 1
+    Set-ItemProperty $spotlight -Name "SkipMachineOOBE" -Value 1
+    Set-ItemProperty $spotlight -Name "SkipUserOOBE" -Value 1
+}
+
+##Loop through users and do the same
+foreach ($sid in $UserSIDs)
+{
+    $spotlight = "Registry::HKU\$sid\Software\Policies\Microsoft\Windows\Explorer"
+    If (Test-Path $spotlight)
+    {
+        Set-ItemProperty $spotlight -Name "NoWelcomeScreen" -Value 1
+    }
+}
+
 #write-output "Set Policy CSP - Settings - limit user mods"
 ## https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-settings#allowonlinetips
 #$spotlight = 'HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer'
@@ -555,7 +575,8 @@ foreach ($sid in $UserSIDs)
 write-output "Harden privacy"
 $regPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System"
 
-If (!(Test-Path $regPath)) {
+If (!(Test-Path $regPath))
+{
     New-Item -Path $regPath -Force | Out-Null
 }
 New-ItemProperty -Path $regPath -Name "AllowClipboardHistory" -Value 0 -PropertyType DWord -Force | Out-Null
@@ -563,8 +584,10 @@ New-ItemProperty -Path $regPath -Name "AllowCrossDeviceClipboard" -Value 0 -Prop
 New-ItemProperty -Path $regPath -Name "AllowFindMyDevice" -Value 0 -PropertyType DWord -Force | Out-Null
 
 # --- Helper: Ensure registry path exists ---
-function Ensure-Key($path) {
-    if (!(Test-Path $path)) {
+function Ensure-Key($path)
+{
+    if (!(Test-Path $path))
+    {
         New-Item -Path $path -Force | Out-Null
     }
 }
