@@ -1,18 +1,22 @@
 ###########################################################################################################
-###########################################################################################################
-Write-Host "Set activity time"
-$edgePolicyPath = "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate"
-
-# Create policy path if missing
-If (!(Test-Path $edgePolicyPath)) {
-    New-Item -Path $edgePolicyPath -Force | Out-Null
+# --- Helper: Ensure registry path exists ---
+function Ensure-Key($path) {
+    if (!(Test-Path $path)) {
+        New-Item -Path $path -Force | Out-Null
+    }
 }
 
-# 1. Disable Microsoft Account Sign-in
-New-ItemProperty -Path $edgePolicyPath -Name "ActiveHoursStart" -Value 8 -PropertyType DWORD -Force | Out-Null
-New-ItemProperty -Path $edgePolicyPath -Name "ActiveHoursEnd" -Value 20 -PropertyType DWORD -Force | Out-Null
-New-ItemProperty -Path $edgePolicyPath -Name "NoUpdateNotificationsDuringActiveHours" -Value 1 -PropertyType DWORD -Force | Out-Null
+###########################################################################################################
+Write-Host "Set activity time"
+$regPath = "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate"
+Ensure-Key $regPath
 
+# 1. Disable Microsoft Account Sign-in
+New-ItemProperty -Path $regPath -Name "ActiveHoursStart" -Value 8 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $regPath -Name "ActiveHoursEnd" -Value 20 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $regPath -Name "NoUpdateNotificationsDuringActiveHours" -Value 1 -PropertyType DWORD -Force | Out-Null
+
+###########################################################################################################
 ###########################################################################################################
 Write-Host "Specific stuff"
 
