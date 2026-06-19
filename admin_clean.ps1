@@ -357,18 +357,18 @@ foreach ($sid in $UserSIDs)
     }
 }
 
-write-output "Set Policy CSP - Settings - limit user mods"
-# https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-settings#allowonlinetips
-$spotlight = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer'
-If (Test-Path $spotlight)
-{
-    Set-ItemProperty $spotlight -Name "AllowOnlineTips" -Value 0
-    Set-ItemProperty $spotlight -Name "AllowRegion" -Value 0
-    Set-ItemProperty $spotlight -Name "AllowVPN" -Value 0
-    Set-ItemProperty $spotlight -Name "AllowYourAccount" -Value 0
-    Set-ItemProperty $spotlight -Name "AllowSignInOptions" -Value 0
-    Set-ItemProperty $spotlight -Name "ConfigureTaskbarCalendar" -Value 1
-}
+#write-output "Set Policy CSP - Settings - limit user mods"
+## https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-settings#allowonlinetips
+#$spotlight = 'HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer'
+#If (Test-Path $spotlight)
+#{
+#    Set-ItemProperty $spotlight -Name "AllowOnlineTips" -Value 0
+#    Set-ItemProperty $spotlight -Name "AllowRegion" -Value 0
+#    Set-ItemProperty $spotlight -Name "AllowVPN" -Value 0
+#    Set-ItemProperty $spotlight -Name "AllowYourAccount" -Value 0
+#    Set-ItemProperty $spotlight -Name "AllowSignInOptions" -Value 0
+#    Set-ItemProperty $spotlight -Name "ConfigureTaskbarCalendar" -Value 1
+#}
 
 
 ############################################################################################################
@@ -666,7 +666,7 @@ Set-ItemProperty -Path $intentPath -Name "BusinessIntent" -Value 0
 
 ## PROXY stuff
 # disable function
-$proxyPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
+$proxyPath = "HKLM:\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
 Ensure-Key $proxyPath
 Set-ItemProperty -Path $proxyPath -Name "ProxyEnable" -Value 0
 Set-ItemProperty -Path $proxyPath -Name "ProxySettingsPerUser" -Value 0
