@@ -539,5 +539,10 @@ foreach ($sid in $UserSIDs)
     Set-ItemProperty $recallusers DisableAIDataAnalysis -Value 1
 }
 
+############################################################################################################
+#                              Remove Legay Windows Features                                               #
+#                                                                                                          #
+############################################################################################################
+Dism.exe /Online /Disable-Feature /NoRestart /featurename:WindowsMediaPlayer
 
 Start-Sleep -Seconds 60
