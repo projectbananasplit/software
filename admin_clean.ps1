@@ -543,6 +543,14 @@ foreach ($sid in $UserSIDs)
 #                              Remove Legay Windows Features                                               #
 #                                                                                                          #
 ############################################################################################################
+Dism.exe /Online /Disable-Feature /NoRestart /featurename:FaxServicesClientPackage
+Dism.exe /Online /Disable-Feature /NoRestart /featurename:Internet-Explorer-Optional-amd64
+Dism.exe /Online /Disable-Feature /NoRestart /featurename:MediaPlayback
+Dism.exe /Online /Disable-Feature /NoRestart /featurename:Printing-XPSServices-Features
+Dism.exe /Online /Disable-Feature /NoRestart /featurename:SMB1Protocol
+Dism.exe /Online /Disable-Feature /NoRestart /featurename:TelnetClient
 Dism.exe /Online /Disable-Feature /NoRestart /featurename:WindowsMediaPlayer
+Dism.exe /Online /Disable-Feature /NoRestart /featurename:WorkFolders-Client
+Dism.exe /Online /Disable-Feature /NoRestart /featurename:Xps-Foundation-Xps-Viewer
 
 Start-Sleep -Seconds 60
