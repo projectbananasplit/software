@@ -1,3 +1,23 @@
+
+
+###########################################################################################################
+Write-Host "Set activity time"
+
+
+$edgePolicyPath = "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate"
+
+# Create policy path if missing
+If (!(Test-Path $edgePolicyPath)) {
+    New-Item -Path $edgePolicyPath -Force | Out-Null
+}
+
+# 1. Disable Microsoft Account Sign-in
+New-ItemProperty -Path $edgePolicyPath -Name "ActiveHoursStart" -Value 8 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $edgePolicyPath -Name "ActiveHoursEnd" -Value 20 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $edgePolicyPath -Name "NoUpdateNotificationsDuringActiveHours" -Value 1 -PropertyType DWORD -Force | Out-Null
+
+###########################################################################################################
+
 $computerName = $env:COMPUTERNAME
 $targetComputerNames = @(
     "M-CW-MS16", "M-CW-MS17", "M-CW-MS18", "M-CW-MS19",
