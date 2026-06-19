@@ -602,6 +602,11 @@ $wifiPath = "HKLM:\SOFTWARE\Microsoft\WcmSvc\wifinetworkmanager\config"
 Ensure-Key $wifiPath
 Set-ItemProperty -Path $wifiPath -Name "AutoConnectAllowedOEM" -Value 0 -Type DWord -Force
 
+# Disable Mobile Hotspot
+$regPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Network Connections"
+Ensure-Key $regPath
+Set-ItemProperty -Path $regPath -Name "NC_ShowSharedAccessUI" -Value 0 -Type DWord -Force
+
 # Disable Presence Sensing (Windows 11 23H2+)
 $presencePath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System"
 Set-ItemProperty -Path $presencePath -Name "EnablePresenceSensing" -Value 0 -Type DWord -Force
