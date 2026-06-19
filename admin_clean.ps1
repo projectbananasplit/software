@@ -693,7 +693,6 @@ $proxyPath = "HKLM:\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
 Ensure-Key $proxyPath
 Set-ItemProperty -Path $proxyPath -Name "ProxyEnable" -Value 0
 Set-ItemProperty -Path $proxyPath -Name "ProxySettingsPerUser" -Value 0
-Set-ItemProperty -Path $proxyPath -Name "PreventZonesFromBeingMoved" -Value 1
 Remove-ItemProperty -Path $proxyPath -Name "AutoConfigURL" -ErrorAction SilentlyContinue
 # disable UX
 $proxyPath = "HKLM:\Software\Policies\Microsoft\Internet Explorer\Control Panel"
