@@ -95,8 +95,8 @@ echo %green%LinkedIn
 winget uninstall %param% --purge -e --name "LinkedIn"
 
 echo %green%Fujitsu Stuff
-winget uninstall %param% --purge -e --name "MSIX\CyberLinkCorpYCM.Power2GoforFujitsu_8.0.8908.0_x86__gp2w6gwybrtrg"
-winget uninstall %param% --purge -e --name "MSIX\CyberLinkCorpYCM.PhotoDirectorforFujitsu_8.0.4020.0_x64__gp2w6gwybrtrg"
+winget uninstall %param% --purge -e --id "MSIX\CyberLinkCorpYCM.Power2GoforFujitsu_8.0.8908.0_x86__gp2w6gwybrtrg"
+winget uninstall %param% --purge -e --id "MSIX\CyberLinkCorpYCM.PhotoDirectorforFujitsu_8.0.4020.0_x64__gp2w6gwybrtrg"
 winget uninstall %param% --purge -e --id "MSIX\CyberLinkCorpYCM.PowerDirectorforFujitsu_14.0.5226.0_x64__gp2w6gwybrtrg"
 
 echo %green%"Paint 3D"
