@@ -11,17 +11,16 @@ Write-Host "Set activity time"
 $regPath = "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate\AU"
 Ensure-Key $regPath
 New-ItemProperty -Path $regPath -Name "AUOptions" -Value 4 -PropertyType DWORD -Force | Out-Null  # 4 = Auto download & schedule install
+New-ItemProperty -Path $regPath -Name "AUPowerManagement" -Value 1 -PropertyType DWORD -Force | Out-Null # wakeup
+New-ItemProperty -Path $regPath -Name "ScheduledInstallDay" -Value 0 -PropertyType DWORD -Force | Out-Null # 0 = Jeden Tag
+New-ItemProperty -Path $regPath -Name "ScheduledInstallTime" -Value 7 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $regPath -Name "AllowMUUpdateService" -Value 1 -PropertyType DWORD -Force | Out-Null
 $regPath = "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate"
 Ensure-Key $regPath
 New-ItemProperty -Path $regPath -Name "SetActiveHours" -Value 1 -PropertyType DWORD -Force | Out-Null
 New-ItemProperty -Path $regPath -Name "ActiveHoursStart" -Value 8 -PropertyType DWORD -Force | Out-Null
 New-ItemProperty -Path $regPath -Name "ActiveHoursEnd" -Value 20 -PropertyType DWORD -Force | Out-Null
 New-ItemProperty -Path $regPath -Name "NoUpdateNotificationsDuringActiveHours" -Value 1 -PropertyType DWORD -Force | Out-Null
-New-ItemProperty -Path $regPath -Name "AllowMUUpdateService" -Value 1 -PropertyType DWORD -Force | Out-Null
-# wakeup
-New-ItemProperty -Path $regPath -Name "AUPowerManagement" -Value 1 -PropertyType DWORD -Force | Out-Null
-Set-ItemProperty -Path $auPath -Name "ScheduledInstallDay" -Value 0 # 0 = Jeden Tag
-Set-ItemProperty -Path $auPath -Name "ScheduledInstallTime" -Value 7
 
 # Disable Preview / Insider
 $regPath = "HKLM:\Software\Policies\Microsoft\Windows\PreviewBuilds"
