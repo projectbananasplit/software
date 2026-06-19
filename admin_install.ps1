@@ -7,6 +7,16 @@ function Ensure-Key($path) {
 }
 
 ###########################################################################################################
+Write-Host "Set DeviceGuard"
+$regPath = "HKLM:\SYSTEM\CurrentControlSet\Control\DeviceGuard"
+Ensure-Key $regPath
+Set-ItemProperty -Path $regPath -Name "EnableVirtualizationBasedSecurity" -Value 1 -Type DWord
+Set-ItemProperty -Path $regPath -Name "RequirePlatformSecurityFeatures" -Value 3 -Type DWord
+$regPath = "HKLM:\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity"
+Ensure-Key $regPath
+Set-ItemProperty -Path $regPath -Name "Enabled" -Value 1 -Type DWord
+
+###########################################################################################################
 Write-Host "Set activity time"
 $regPath = "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate\AU"
 Ensure-Key $regPath
