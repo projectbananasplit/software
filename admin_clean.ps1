@@ -565,4 +565,55 @@ Dism.exe /Online /Disable-Feature /NoRestart /featurename:WindowsMediaPlayer
 Dism.exe /Online /Disable-Feature /NoRestart /featurename:WorkFolders-Client
 Dism.exe /Online /Disable-Feature /NoRestart /featurename:Xps-Foundation-Xps-Viewer
 
+############################################################################################################
+# Disable Microsoft Account Sign-in in Microsoft Edge
+# Applies system-wide for all users
+$edgePolicyPath = "HKLM:\SOFTWARE\Policies\Microsoft\Edge"
+If (!(Test-Path $edgePolicyPath)) {
+    New-Item -Path $edgePolicyPath -Force | Out-Null
+}
+New-ItemProperty -Path $edgePolicyPath -Name "BrowserSignin" -Value 0 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $edgePolicyPath -Name "NonRemovableProfileEnabled" -Value 0 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $edgePolicyPath -Name "PasswordManagerEnabled" -Value 0 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $edgePolicyPath -Name "AutofillAddressEnabled" -Value 0 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $edgePolicyPath -Name "AutofillCreditCardEnabled" -Value 0 -PropertyType DWORD -Force | Out-Null
+# Harden Microsoft Edge for Public Usage
+# Applies system-wide for all users
+
+$edgePolicyPath = "HKLM:\SOFTWARE\Policies\Microsoft\Edge"
+
+# Create policy path if missing
+If (!(Test-Path $edgePolicyPath)) {
+    New-Item -Path $edgePolicyPath -Force | Out-Null
+}
+
+# 1. Disable Microsoft Account Sign-in
+New-ItemProperty -Path $edgePolicyPath -Name "BrowserSignin" -Value 0 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $edgePolicyPath -Name "NonRemovableProfileEnabled" -Value 0 -PropertyType DWORD -Force | Out-Null
+
+# 3. Disable password saving & autofill
+New-ItemProperty -Path $edgePolicyPath -Name "PasswordManagerEnabled" -Value 0 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $edgePolicyPath -Name "AutofillAddressEnabled" -Value 0 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $edgePolicyPath -Name "AutofillCreditCardEnabled" -Value 0 -PropertyType DWORD -Force | Out-Null
+
+# 4. Block all extensions
+New-ItemProperty -Path $edgePolicyPath -Name "ExtensionInstallBlocklist" -Value "*" -PropertyType String -Force | Out-Null
+
+# 5. tracking prevention
+New-ItemProperty -Path $edgePolicyPath -Name "TrackingPrevention" -Value 1 -PropertyType DWORD -Force | Out-Null
+
+# 6. Lock homepage & startup page - some redundant
+New-ItemProperty -Path $edgePolicyPath -Name "HomepageLocation" -Value "https://www.example.com" -PropertyType String -Force | Out-Null
+New-ItemProperty -Path $edgePolicyPath -Name "HomepageIsNewTabPage" -Value 0 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $edgePolicyPath -Name "RestoreOnStartup" -Value 1 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $edgePolicyPath -Name "RestoreOnStartupURLs" -Value "https://www.example.com" -PropertyType String -Force | Out-Null
+New-ItemProperty -Path $edgePolicyPath -Name "SyncDisabled" -Value 1 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $edgePolicyPath -Name "HubsSidebarEnabled" -Value 0 -PropertyType DWORD -Force | Out-Null
+
+New-ItemProperty -Path $edgePolicyPath -Name "UserFeedbackAllowed" -Value 0 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $edgePolicyPath -Name "PersonalizationReportingEnabled" -Value 0 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $edgePolicyPath -Name "DiagnosticData" -Value 0 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $edgePolicyPath -Name "Edge3PSerpTelemetryEnabled" -Value 0 -PropertyType DWORD -Force | Out-Null
+
+
 Start-Sleep -Seconds 60
