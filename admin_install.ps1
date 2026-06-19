@@ -10,13 +10,15 @@ function Ensure-Key($path) {
 Write-Host "Set activity time"
 $regPath = "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate"
 Ensure-Key $regPath
-
-# 1. Disable Microsoft Account Sign-in
 New-ItemProperty -Path $regPath -Name "SetActiveHours" -Value 1 -PropertyType DWORD -Force | Out-Null
 New-ItemProperty -Path $regPath -Name "ActiveHoursStart" -Value 8 -PropertyType DWORD -Force | Out-Null
 New-ItemProperty -Path $regPath -Name "ActiveHoursEnd" -Value 20 -PropertyType DWORD -Force | Out-Null
 New-ItemProperty -Path $regPath -Name "NoUpdateNotificationsDuringActiveHours" -Value 1 -PropertyType DWORD -Force | Out-Null
-
+# Set UX active hours.
+$regPath = "HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings"
+Ensure-Key $regPath
+New-ItemProperty -Path $regPath -Name "ActiveHoursStart" -Value 8 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path $regPath -Name "ActiveHoursEnd" -Value 20 -PropertyType DWORD -Force | Out-Null
 ###########################################################################################################
 ###########################################################################################################
 #Write-Host "Specific stuff"
