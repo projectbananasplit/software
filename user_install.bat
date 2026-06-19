@@ -72,15 +72,13 @@ winget install %param% -e --id "9PGZKJC81Q7J"
 echo %blue%##############################
 echo %blue%winget
 echo %blue%##############################
-:: echo %green%Figma
-::winget install %param% -e --id "Figma.Figma"
 
 echo %green%GIMP 3
 winget install %param% -e --id GIMP.GIMP.3
 echo %green%Python 3.14
 winget install %param% -e --id Python.Python.3.14
 echo %green%FreeCAD
-winget install %param% -e --id "FreeCAD.FreeCAD
+winget install %param% -e --id FreeCAD.FreeCAD
 echo %green%Visual Studio Code
 winget install %param% -e --id "Microsoft.VisualStudioCode"
 
