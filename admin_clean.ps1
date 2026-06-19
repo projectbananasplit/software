@@ -552,6 +552,54 @@ foreach ($sid in $UserSIDs)
 }
 
 ############################################################################################################
+write-output "Harden privacy"
+$regPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System"
+
+If (!(Test-Path $regPath)) {
+    New-Item -Path $regPath -Force | Out-Null
+}
+New-ItemProperty -Path $regPath -Name "AllowClipboardHistory" -Value 0 -PropertyType DWord -Force | Out-Null
+New-ItemProperty -Path $regPath -Name "AllowCrossDeviceClipboard" -Value 0 -PropertyType DWord -Force | Out-Null
+New-ItemProperty -Path $regPath -Name "AllowFindMyDevice" -Value 0 -PropertyType DWord -Force | Out-Null
+
+# --- Helper: Ensure registry path exists ---
+function Ensure-Key($path) {
+    if (!(Test-Path $path)) {
+        New-Item -Path $path -Force | Out-Null
+    }
+}
+
+# 1. Clipboard Privacy
+$sysPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System"
+Ensure-Key $sysPath
+Set-ItemProperty -Path $sysPath -Name "AllowClipboardHistory" -Value 0 -Type DWord -Force
+Set-ItemProperty -Path $sysPath -Name "AllowCrossDeviceClipboard" -Value 0 -Type DWord -Force
+
+# Disable Advertising ID
+$advPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo"
+Ensure-Key $advPath
+Set-ItemProperty -Path $advPath -Name "DisabledByGroupPolicy" -Value 1 -Type DWord -Force
+
+# Disable Location Services
+$locPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors"
+Ensure-Key $locPath
+Set-ItemProperty -Path $locPath -Name "DisableLocation" -Value 1 -Type DWord -Force
+
+# Diagnostic Data (Required Only)
+$diagPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection"
+Ensure-Key $diagPath
+Set-ItemProperty -Path $diagPath -Name "AllowTelemetry" -Value 0 -Type DWord -Force
+
+# Disable Wi‑Fi Sense / Hotspot 2.0
+$wifiPath = "HKLM:\SOFTWARE\Microsoft\WcmSvc\wifinetworkmanager\config"
+Ensure-Key $wifiPath
+Set-ItemProperty -Path $wifiPath -Name "AutoConnectAllowedOEM" -Value 0 -Type DWord -Force
+
+# Disable Presence Sensing (Windows 11 23H2+)
+$presencePath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System"
+Set-ItemProperty -Path $presencePath -Name "EnablePresenceSensing" -Value 0 -Type DWord -Force
+
+############################################################################################################
 write-output "Harden MS Edge"
 # Disable Microsoft Account Sign-in in Microsoft Edge
 # Applies system-wide for all users
