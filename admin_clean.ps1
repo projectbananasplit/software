@@ -294,8 +294,24 @@ $consumer = 'HKLM:\\SOFTWARE\Policies\Microsoft\Windows\CloudContent'
 If (Test-Path $consumer)
 {
     Set-ItemProperty $consumer -Name "DisableWindowsConsumerFeatures" -Value 1
+    Set-ItemProperty $consumer -Name "DisableSoftLanding" -Value 1
 }
 
+
+
+############################################################################################################
+#                                            Policy CSP - WindowsLogon                                     #
+#                                                                                                          #
+############################################################################################################
+# https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-windowslogon#windowslogon-enablefirstlogonanimation
+
+write-output "Policy CSP - WindowsLogon"
+$spotlight = 'HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System'
+If (Test-Path $spotlight)
+{
+    Set-ItemProperty $spotlight -Name "EnableFirstLogonAnimation" -Value 0
+    Set-ItemProperty $spotlight -Name "DisableLockScreenAppNotifications" -Value 1
+}
 
 
 ############################################################################################################
