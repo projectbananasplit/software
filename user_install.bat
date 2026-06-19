@@ -42,6 +42,8 @@ echo %green%Raw-Bilderweiterung
 winget install %param% -e --id "9NCTDW2W1BH8"
 echo %green%HEIF-Bilderweiterungen
 winget install %param% -e --id "9PMMSR1CGPWG"
+echo %green%AVC Encoder-Videoerweiterung
+winget install %param% -e --id "9pb0trcnrhfx"
 echo %green%AV1 Video Extension
 winget install %param% -e --id "9MVZQVXJBQ9V"
 echo %green%VP9 Video Erweiterung
