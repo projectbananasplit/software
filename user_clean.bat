@@ -82,6 +82,7 @@ echo %green%Adobe
 winget uninstall %param% -e --name "Adobe Notification Client"
 winget uninstall %param% -e --name "Acrobat Notification Client"
 winget uninstall %param% -e --name "Notification Manager for Acrobat Reader"
+winget uninstall %param% -e --id "MSIX\ReaderNotificationClient_1.0.4.0_x86__e1rzdqpraam7r"
 
 echo %green%Figma
 winget uninstall %param% --purge -e --id "Figma.FigmaAgent"
@@ -91,13 +92,18 @@ echo %green%"GIMP 2.10.34"
 winget uninstall %param% --purge --name "GIMP 2.10.34"
 
 echo %green%LinkedIn
-winget uninstall %param% -e --name "LinkedIn"
+winget uninstall %param% --purge -e --name "LinkedIn"
+
+echo %green%Fujitsu Stuff
+winget uninstall %param% --purge -e --name "MSIX\CyberLinkCorpYCM.Power2GoforFujitsu_8.0.8908.0_x86__gp2w6gwybrtrg"
+winget uninstall %param% --purge -e --name "MSIX\CyberLinkCorpYCM.PhotoDirectorforFujitsu_8.0.4020.0_x64__gp2w6gwybrtrg"
+winget uninstall %param% --purge -e --id "MSIX\CyberLinkCorpYCM.PowerDirectorforFujitsu_14.0.5226.0_x64__gp2w6gwybrtrg"
 
 echo %green%"Paint 3D"
 winget uninstall %param% -e --name "Paint 3D"
 
 echo %green%bingtranslator
-winget uninstall %param% --id "bingtranslator"
+winget uninstall %param% --purge -e --id "MSIX\Microsoft.BingTranslator_5.6.0.0_x64__8wekyb3d8bbwe"
 
 Event stuff
 echo %green%KNIME Analytics Platform
@@ -111,6 +117,7 @@ winget uninstall %param% --purge -e --id "KNIMEAG.KNIMEAnalyticsPlatform"
 echo %purp%==============================
 echo %green%Microsoft Teams
 winget uninstall %param% -e --id Microsoft.Teams.Free
+winget uninstall %param% --purge -e --id "ARP\Machine\X64\{A7AB73A3-CB10-4AA5-9D38-6AEFFBDE4C91}"
 echo %green%MS Clipchamp
 winget uninstall %param% -e --id "9P1J8S7CCWWT"
 
