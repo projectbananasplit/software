@@ -616,11 +616,7 @@ write-output "Harden MS Edge"
 # Disable Microsoft Account Sign-in in Microsoft Edge
 # Applies system-wide for all users
 $edgePolicyPath = "HKLM:\SOFTWARE\Policies\Microsoft\Edge"
-
-# Create policy path if missing
-If (!(Test-Path $edgePolicyPath)) {
-    New-Item -Path $edgePolicyPath -Force | Out-Null
-}
+Ensure-Key $edgePolicyPath
 
 # 1. Disable Microsoft Account Sign-in
 New-ItemProperty -Path $edgePolicyPath -Name "BrowserSignin" -Value 0 -PropertyType DWORD -Force | Out-Null
@@ -656,6 +652,17 @@ New-ItemProperty -Path $edgePolicyPath -Name "UserFeedbackAllowed" -Value 0 -Pro
 New-ItemProperty -Path $edgePolicyPath -Name "PersonalizationReportingEnabled" -Value 0 -PropertyType DWORD -Force | Out-Null
 New-ItemProperty -Path $edgePolicyPath -Name "DiagnosticData" -Value 0 -PropertyType DWORD -Force | Out-Null
 New-ItemProperty -Path $edgePolicyPath -Name "Edge3PSerpTelemetryEnabled" -Value 0 -PropertyType DWORD -Force | Out-Null
+
+
+# Pfad zum Engagement-Profil des aktuellen Benutzers
+$intentPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement"
+Ensure-Key $intentPath
+Set-ItemProperty -Path $intentPath -Name "GamingIntent" -Value 0
+Set-ItemProperty -Path $intentPath -Name "DevelopmentIntent" -Value 0
+Set-ItemProperty -Path $intentPath -Name "PersonalizationIntent" -Value 0
+Set-ItemProperty -Path $intentPath -Name "FamilyIntent" -Value 0
+Set-ItemProperty -Path $intentPath -Name "SchoolIntent" -Value 0
+Set-ItemProperty -Path $intentPath -Name "BusinessIntent" -Value 0
 
 ############################################################################################################
 #                              Remove Legay Windows Features                                               #
