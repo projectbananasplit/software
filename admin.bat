@@ -15,8 +15,8 @@ echo Running with elevated privileges!
 call "wait_until_network.bat"
 powershell -noprofile -command "&{ start-process powershell -ArgumentList '-noprofile -ExecutionPolicy Bypass -file .\admin_clean.ps1' -verb RunAs}"
 call "admin_clean.bat"
-call "admin_install.bat"
 powershell -noprofile -command "&{ start-process powershell -ArgumentList '-noprofile -ExecutionPolicy Bypass -file .\admin_install.ps1' -verb RunAs}"
+call "admin_install.bat"
 
 # Run DISM ScanHealth and capture output and exit code
 output=$(DISM /Online /Cleanup-Image /ScanHealth 2>&1)
