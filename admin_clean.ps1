@@ -664,6 +664,20 @@ Set-ItemProperty -Path $intentPath -Name "FamilyIntent" -Value 0
 Set-ItemProperty -Path $intentPath -Name "SchoolIntent" -Value 0
 Set-ItemProperty -Path $intentPath -Name "BusinessIntent" -Value 0
 
+## PROXY stuff
+# disable function
+$proxyPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
+Ensure-Key $proxyPath
+Set-ItemProperty -Path $proxyPath -Name "ProxyEnable" -Value 0
+Set-ItemProperty -Path $proxyPath -Name "ProxySettingsPerUser" -Value 0
+Set-ItemProperty -Path $proxyPath -Name "PreventZonesFromBeingMoved" -Value 1
+Remove-ItemProperty -Path $proxyPath -Name "AutoConfigURL" -ErrorAction SilentlyContinue
+# disable UX
+$proxyPath = "HKLM:\Software\Policies\Microsoft\Internet Explorer\Control Panel"
+Ensure-Key $proxyPath
+Set-ItemProperty -Path $explorerPath -Name "Connection Settings" -Value 1
+Set-ItemProperty -Path $explorerPath -Name "Proxy" -Value 1
+
 ############################################################################################################
 #                              Remove Legay Windows Features                                               #
 #                                                                                                          #
