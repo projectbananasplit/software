@@ -17,7 +17,13 @@ New-ItemProperty -Path $regPath -Name "SetActiveHours" -Value 1 -PropertyType DW
 New-ItemProperty -Path $regPath -Name "ActiveHoursStart" -Value 8 -PropertyType DWORD -Force | Out-Null
 New-ItemProperty -Path $regPath -Name "ActiveHoursEnd" -Value 20 -PropertyType DWORD -Force | Out-Null
 New-ItemProperty -Path $regPath -Name "NoUpdateNotificationsDuringActiveHours" -Value 1 -PropertyType DWORD -Force | Out-Null
-# Set UX active hours.
+New-ItemProperty -Path $regPath -Name "AllowMUUpdateService" -Value 1 -PropertyType DWORD -Force | Out-Null
+# wakeup
+New-ItemProperty -Path $regPath -Name "AUPowerManagement" -Value 1 -PropertyType DWORD -Force | Out-Null
+Set-ItemProperty -Path $auPath -Name "ScheduledInstallDay" -Value 0 # 0 = Jeden Tag
+Set-ItemProperty -Path $auPath -Name "ScheduledInstallTime" -Value 7
+
+# Set UX active hours. Fallback.
 $regPath = "HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings"
 Ensure-Key $regPath
 New-ItemProperty -Path $regPath -Name "ActiveHoursStart" -Value 8 -PropertyType DWORD -Force | Out-Null
