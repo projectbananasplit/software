@@ -8,6 +8,9 @@ function Ensure-Key($path) {
 
 ###########################################################################################################
 Write-Host "Set activity time"
+$regPath = "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate\AU"
+Ensure-Key $regPath
+New-ItemProperty -Path $regPath -Name "AUOptions" -Value 4 -PropertyType DWORD -Force | Out-Null  # 4 = Auto download & schedule install
 $regPath = "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate"
 Ensure-Key $regPath
 New-ItemProperty -Path $regPath -Name "SetActiveHours" -Value 1 -PropertyType DWORD -Force | Out-Null
