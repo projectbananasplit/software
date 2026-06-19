@@ -1,9 +1,6 @@
-
-
+###########################################################################################################
 ###########################################################################################################
 Write-Host "Set activity time"
-
-
 $edgePolicyPath = "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate"
 
 # Create policy path if missing
@@ -17,6 +14,7 @@ New-ItemProperty -Path $edgePolicyPath -Name "ActiveHoursEnd" -Value 20 -Propert
 New-ItemProperty -Path $edgePolicyPath -Name "NoUpdateNotificationsDuringActiveHours" -Value 1 -PropertyType DWORD -Force | Out-Null
 
 ###########################################################################################################
+Write-Host "Specific stuff"
 
 $computerName = $env:COMPUTERNAME
 $targetComputerNames = @(
