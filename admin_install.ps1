@@ -23,6 +23,11 @@ New-ItemProperty -Path $regPath -Name "AUPowerManagement" -Value 1 -PropertyType
 Set-ItemProperty -Path $auPath -Name "ScheduledInstallDay" -Value 0 # 0 = Jeden Tag
 Set-ItemProperty -Path $auPath -Name "ScheduledInstallTime" -Value 7
 
+# Disable Preview / Insider
+$regPath = "HKLM:\Software\Policies\Microsoft\Windows\PreviewBuilds"
+Ensure-Key $regPath
+New-ItemProperty -Path $regPath -Name "AllowBuildPreview" -Value 0 -PropertyType DWORD -Force | Out-Null
+
 # Set UX active hours. Fallback.
 $regPath = "HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings"
 Ensure-Key $regPath
