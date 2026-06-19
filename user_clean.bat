@@ -93,6 +93,12 @@ winget uninstall %param% -e --name "GIMP 2.10.34"
 echo %green%LinkedIn
 winget uninstall %param% -e --name "LinkedIn"
 
+echo %green%"Paint 3D"
+winget uninstall %param% -e --name "Paint 3D"
+
+echo %green%bingtranslator
+winget uninstall %param% --id "bingtranslator"
+
 Event stuff
 echo %green%KNIME Analytics Platform
 winget uninstall %param% --purge -e --id "KNIMEAG.KNIMEAnalyticsPlatform"
