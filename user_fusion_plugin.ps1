@@ -1,6 +1,6 @@
 ﻿Write-Host "Update Fusion360 Plugin" -ForegroundColor Green -BackgroundColor Gray
 
-$newVersion = "1.8.0"
+$newVersion = "1.9.0"
 $zipUrl = "https://github.com/projectbananasplit/assets/raw/refs/heads/main/fusion360/shaper.zip"  # Replace with the actual URL
 $zipTempFilePath = "$env:TEMP\shaper.zip"
 
