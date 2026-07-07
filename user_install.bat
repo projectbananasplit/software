@@ -65,6 +65,8 @@ echo %green%NanaZip
 winget install %param% -e --id "9N8G7TSCL18R"
 echo %green%Cinebench
 winget install %param% -e --id "9PGZKJC81Q7J"
+echo %green%OrcaSlicer
+winget install %param% -e --id "9MV6GL23XM59"
 
 ::echo %green%Visual Studio Code
 :: "scope user" installer not found
@@ -76,11 +78,11 @@ echo %blue%winget
 echo %blue%##############################
 
 echo %green%GIMP 3
-winget install %param% -e --id GIMP.GIMP.3
+winget install %param% -e --id "GIMP.GIMP.3"
 echo %green%Python 3.14
-winget install %param% -e --id Python.Python.3.14
+winget install %param% -e --id "Python.Python.3.14"
 echo %green%FreeCAD
-winget install %param% -e --id FreeCAD.FreeCAD
+winget install %param% -e --id "FreeCAD.FreeCAD"
 echo %green%Visual Studio Code
 winget install %param% -e --id "Microsoft.VisualStudioCode"
 
